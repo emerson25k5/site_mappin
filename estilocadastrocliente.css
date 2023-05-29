@@ -1,0 +1,33 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to right, rgb(105, 43, 81), rgb(73, 6, 59));
+}
+.box {
+    color: rgb(0, 0, 0);
+    position: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(110%, -8%);
+    background-color: rgba(255, 255, 255, 0.363);
+    padding: 15px;
+    border-radius:  5px;
+    width: 30%;
+    height: auto;
+}
+.logoMappin {
+  position: initial;
+  width: 30%;
+}
+#submit {
+  background-image: linear-gradient(to right, #f80088, #ad4b8e);
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#submit:hover{
+  background-image: linear-gradient(to right, #ff9100, #aa157b);
+}

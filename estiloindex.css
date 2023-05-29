@@ -1,0 +1,15 @@
+.logoMappin {
+    position: initial;
+    width: 30%;
+  }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, rgb(105, 43, 81), rgb(73, 6, 59));
+  }
+  .produtos-container {
+    color: white;
+  }
+.saibamais {
+  font-size: 200%;
+  color: white;
+}
