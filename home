@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+      <TITLE>Cadastro</TITLE>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Site de vendas digital">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Emerson Santos">
+    <link rel="stylesheet" type="text/css" href="estilohome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    <nav style="background-image: linear-gradient(to right, #ff9100, #aa157b)";>
+        <div class="nav-wrapper">
+          <a href="home.html" class="brand-logo"> <img src="Imagens/logomappin4.png" alt="logomappin" class="logoMappin"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="home"><b>Loja</b></a></li>
+            <li><a href="badges.html"><b>Minha conta</b></a></li>
+            <li><a href="collapsible.html"><b>Carrinho</b></a></li>
+            <li><a href="login.html"><b>Login</b></a></li>
+            <li><a href="cadastrocliente.html"><b>Cadastre-se</b></a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </HEAD>
+<BODY>
+
+<div class="container" style="width: auto;">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.dropdown-trigger');
+          var options = {
+            hover: true
+          };
+          var instances = M.Dropdown.init(elems, options);
+          hover: true
+        });
+      </script>
+      
+      <!-- Dropdown Trigger -->
+      <a class='dropdown-trigger btn' href='#' data-target='dropdown1' style="background-image: linear-gradient(to right, #ff9100, #aa157b)";><b>Chuteiras</b></a>
+      
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">Nike</a></li>
+        <li><a href="#!">Society</a></li>
+        <li><a href="#!">Campo</a></li>
+      </ul>
+
+    <footer class="page-footer" style="background-image: linear-gradient(to right, #ff9100, #aa157b)";>
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2023 Mappin
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+    </footer>
+
+</div>
+
+</BODY>
+</HTML>

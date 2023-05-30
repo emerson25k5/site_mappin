@@ -15,10 +15,10 @@
 <div class="container" style="width: auto;">
     <nav style="background-image: linear-gradient(to right, #ff9100, #aa157b)";>
       <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo"> <img src="Imagens/logomappin.png" alt="logomappin" class="logoMappin"></a>        
+        <a href="home.html" class="brand-logo"> <img src="Imagens/logomappin.png" alt="logomappin" class="logoMappin"></a>        
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="listarusuarios.php"><b>Clientes</b></a></li>
-          <li><a href="index.html"><b>Loja</b></a></li>
+          <li><a href="home.html"><b>Loja</b></a></li>
           <li><a href="listarusuarios.php"><b>Minha conta</b></a></li>
           <li><a href="collapsible.html"><b>Carrinho</b></a></li>
           <li><a href="cadastrocliente.html"><b>Cadastre-se</b></a></li>
