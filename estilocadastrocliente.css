@@ -1,3 +1,6 @@
+.nav {
+  background-image: linear-gradient(to right, #ff9100, #aa157b);
+}
 body{
   font-family: Arial, Helvetica, sans-serif;
   background-image: linear-gradient(to right, rgb(105, 43, 81), rgb(73, 6, 59));
@@ -19,7 +22,7 @@ body{
   width: 10%;
 }
 #submit {
-  background-image: linear-gradient(to right, #f80088, #ad4b8e);
+  background-image: linear-gradient(to right, #ff9100d7, #aa157bd3);
   width: 100%;
   border: none;
   padding: 15px;
@@ -29,5 +32,8 @@ body{
   border-radius: 5px;
 }
 #submit:hover{
+  background-image: linear-gradient(to right, #ff9100f1, #aa157bdc);
+}
+.rodape {
   background-image: linear-gradient(to right, #ff9100, #aa157b);
 }
