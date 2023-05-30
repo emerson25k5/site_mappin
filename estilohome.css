@@ -13,3 +13,6 @@
   font-size: 200%;
   color: white;
 }
+.rodape {
+  background-image: linear-gradient(to right, #ff9100, #aa157b);
+}
