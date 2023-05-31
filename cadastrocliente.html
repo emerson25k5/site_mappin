@@ -19,25 +19,21 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
+        <nav class="nav">
+          <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo"> <img src="Imagens/logomappin4.png" alt="logomappin" class="logoMappin"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="Login.html">Login</a></li>
+              <li><a href="cadastrocliente.html">Cadastro</a></li>
+            </ul>
+          </div>
+        </nav>
 
     </HEAD>
  <BODY>
 
 <div class="container" style="width: auto;">
-
-                <nav style="background-image: linear-gradient(to right, #ff9100, #aa157b)";>
-                  <div class="nav-wrapper">
-                    <a href="index.html" class="brand-logo"> <img src="Imagens/logomappin4.png" alt="logomappin" class="logoMappin"></a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                      <li><a href="index.html"><b>Loja</b></a></li>
-                      <li><a href="badges.html"><b>Minha conta</b></a></li>
-                      <li><a href="collapsible.html"><b>Carrinho</b></a></li>
-                      <li><a href="login.html"><b>Login</b></a></li>
-                      <li><a href="cadastrocliente.html"><b>Cadastre-se</b></a></li>
-                    </ul>
-                  </div>
-                </nav>
 
                 <br> <br><br>
 
@@ -79,10 +75,6 @@
             
         </fieldset>    
       </form>
-      <?php if (isset($mensagem)) { ?>
-        <div class="mensagem"><?php echo $mensagem; ?></div>
-        <div class="erro"><?php echo $erro; ?></div>
-    <?php } ?>
     
     </div>
     <footer class="page-footer" style="background-image: linear-gradient(to right, #ff9100, #aa157b)";>
