@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Executa a query
     if (mysqli_query($conexao, $sql)) {
         echo "Registro inserido com sucesso!";
-        header("Location: home.html");
+        header("Location: index.html");
         exit();
     } else {
         echo "Erro ao inserir o registro: " . mysqli_error($conexao);

@@ -12,18 +12,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-<div>
-  <nav class="nav">
-    <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo"> <img src="Imagens/logomappin4.png" alt="logomappin" class="logoMappin"></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="index.html"><b>Home</b></a></li>
-        <li><a href="login.html"><b>Login</b></a></li>
-        <li><a href="cadastrocliente.html"><b>Cadastre-se</b></a></li>
-      </ul>
-    </div>
-  </nav>
-</div>
+<!-- NAV -->
+
+<nav>
+  <div class="nav">
+    <a href="index.html"><img src="Imagens/logomappin4.png" class="logoMappin" ></a>
+    <ul class="right hide-on-med-and-dow">
+      <li><a class="botao_container" href="#!" data-target="dropdown1">Novidades</a></li>
+      <li><a class="botao_container" href="#!" data-target="dropdown2">Masculino</a></li>
+      <li><a class="botao_container" href="#!" data-target="dropdown3">Feminino</a></li>
+      <li><a class="botao_container" href="#!" data-target="dropdown4">Calçados</a></li>
+      <li><a class="botao_container" href="#!" data-target="dropdown5">Camisas</a></li>
+      <li><a class="botao_container" href="#!" data-target="dropdown6">Acessórios</a></li>
+      <li><a class="botao_principal" href="login.html">Login</a></li>
+      <li><a class="botao_principal" href=".html">Meu perfil</a></li>
+      <li><a class="botao_principal" href="cadastrocliente.html">Cadastre-se</a></li>
+    </ul>
+  </div>
+</nav>
 
     </HEAD>
 <BODY>
@@ -34,7 +40,7 @@
 
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.dropdown-trigger');
+          var elems = document.querySelectorAll('.dropdown');
           var options = {
             hover: true
           };
@@ -44,7 +50,6 @@
       </script>
       
       <!-- Categoria 1-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown1';><b>Novidades</b></a>
       
       <ul id='dropdown1' class='dropdown-content'>
         <li><a href="#!">Nike</a></li>
@@ -59,7 +64,6 @@
       </ul>
 
       <!-- Categoria 2-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown2';><b>Feminino</b></a>
       
       <ul id='dropdown2' class='dropdown-content'>
         <li><a href="#!">Nike</a></li>
@@ -68,7 +72,6 @@
       </ul>
 
       <!-- Categoria 3-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown3'><b>Masculino</b></a>
       
       <ul id='dropdown3' class='dropdown-content'>
         <li><a href="#!">Nike</a></li>
@@ -77,7 +80,6 @@
       </ul>
 
       <!-- Categoria 4-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown4'><b>Calçados</b></a>
       
       <ul id='dropdown4' class='dropdown-content'>
         <li><a href="#!">Nike</a></li>
@@ -86,7 +88,6 @@
       </ul>
 
       <!-- Categoria 5-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown5'><b>Suplementos</b></a>
       
       <ul id='dropdown5' class='dropdown-content'>
         <li><a href="#!">Nike</a></li>
@@ -95,7 +96,6 @@
       </ul>
 
       <!-- Categoria 6-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown6'><b>Vitaminas</b></a>
       
       <ul id='dropdown6' class='dropdown-content'>
         <li><a href="#!">Nike</a></li>
@@ -103,63 +103,10 @@
         <li><a href="#!">Campo</a></li>
       </ul>
 
-      <!-- Categoria 7-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown7'><b>Coleções</b></a>
-      
-      <ul id='dropdown7' class='dropdown-content'>
-        <li><a href="#!">Nike</a></li>
-        <li><a href="#!">Society</a></li>
-        <li><a href="#!">Campo</a></li>
-      </ul>
-
-      <!-- Categoria 8-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown8'><b>Chuteiras</b></a>
-      
-      <ul id='dropdown8' class='dropdown-content'>
-        <li><a href="#!">Nike</a></li>
-        <li><a href="#!">Society</a></li>
-        <li><a href="#!">Campo2</a></li>
-        <li><a href="#!">NikeD</a></li>
-         <li><a href="#!">SocietyS</a></li>
-         <li><a href="#!">CampoA</a></li>
-         <li><a href="#!">NikeA</a></li>
-         <li><a href="#!">SocietyA</a></li>
-         <li><a href="#!">CampoA</a></li>
-      </ul>
-
-      <!-- Categoria 9-->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown9'><b>Camisas</b></a>
-      
-      <ul id='dropdown9' class='dropdown-content'>
-        <li><a href="#!">Nike</a></li>
-        <li><a href="#!">Society</a></li>
-        <li><a href="#!">Campo</a></li>
-        <li><a href="#!">Nike</a></li>
-         <li><a href="#!">Society</a></li>
-         <li><a href="#!">Campo</a></li>
-         <li><a href="#!">Nike</a></li>
-         <li><a href="#!">Society</a></li>
-         <li><a href="#!">Campo</a></li>
-      </ul>
-
-       <!-- Categoria 10-->
-       <a class='dropdown-trigger btn' href='#' data-target='dropdown10'><b>Calçados</b></a>
-      
-       <ul id='dropdown10' class='dropdown-content'>
-         <li><a href="#!">Nike</a></li>
-         <li><a href="#!">Society</a></li>
-         <li><a href="#!">Campo</a></li>
-         <li><a href="#!">Nike</a></li>
-         <li><a href="#!">Society</a></li>
-         <li><a href="#!">Campo</a></li>
-         <li><a href="#!">Nike</a></li>
-         <li><a href="#!">Society</a></li>
-         <li><a href="#!">Campo</a></li>
-       </ul>
   </div>
 
 
-
+<br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
 
 
     <footer class="rodape">
