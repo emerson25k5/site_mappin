@@ -2,6 +2,14 @@
   background-image: linear-gradient(to right, #ff9100, #aa157b);
 }
 
+.logoMappin {
+  background-image: url(Imagens/logomappin4.png);
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+    background-position: left;
+}
+
 
 body{
   font-family: Arial, Helvetica, sans-serif;

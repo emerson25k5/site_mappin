@@ -1,136 +1,153 @@
 <!DOCTYPE html>
 <HTML>
-    <HEAD>
-      <TITLE>Home</TITLE>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="Site de vendas digital">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Emerson Santos">
-    <link rel="stylesheet" type="text/css" href="estiloindex.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<HEAD>
+  <TITLE>Home</TITLE>
+
+  <meta charset="UTF-8">
+  <meta name="description" content="Site de vendas digital">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Emerson Santos">
+  <link rel="stylesheet" type="text/css" href="estiloindex.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-<!-- NAV -->
 
-<nav>
-  <div class="nav">
-    <a href="index.html"><img src="Imagens/logomappin4.png" class="logoMappin" ></a>
-    <ul class="right hide-on-med-and-dow">
-      <li><a class="botao_principal" href="login.html">Login</a></li>
-      <li><a class="botao_principal" href=".html">Meu perfil</a></li>
-      <li><a class="botao_principal" href="cadastrocliente.html">Cadastre-se</a></li>
-    </ul>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.botao_drop');
+      var instances = M.Dropdown.init(elems, {
+        hover: true
+      });
+    });
+  </script>
+
+
+  <!-- NAV -->
+
+  <nav>
+    <div class="nav">
+      <a href="index.html"><img src="Imagens/logomappin3.png" class="logoMappin"></a>
+      <ul class="right hide-on-med-and-dow">
+        <li><a class="botao_principal" href="login.html">Login</a></li>
+        <li><a class="botao_principal" href=".html">Meu perfil</a></li>
+        <li><a class="botao_principal" href="cadastrocliente.html">Cadastre-se</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="drop-container">
+        <ul>
+          <li><a class='botao_drop' href='#' data-target='dropdown1'>Drop Me!</a></li>
+          <li><a class='botao_drop' href='#' data-target='dropdown2'>Drop Me!</a></li>
+          <li><a class='botao_drop' href='#' data-target='dropdown3'>Drop Me!</a></li>
+          <li><a class='botao_drop' href='#' data-target='dropdown4'>Drop Me!</a></li>
+          <li><a class='botao_drop' href='#' data-target='dropdown5'>Drop Me!</a></li>
+          <li><a class='botao_drop' href='#' data-target='dropdown6'>Drop Me!</a></li>
+        </ul>
   </div>
-</nav>
 
-<div class="drop">
+    <!-- Categoria 1-->
 
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+    </ul>
 
+    <!-- Categoria 2-->
 
+    <ul id='dropdown2' class='dropdown-content'>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+    </ul>
 
+    <!-- Categoria 3-->
 
+    <ul id='dropdown3' class='dropdown-content'>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+    </ul>
 
+    <!-- Categoria 4-->
 
-</div>
+    <ul id='dropdown4' class='dropdown-content'>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+    </ul>
+
+    <!-- Categoria 5-->
+
+    <ul id='dropdown5' class='dropdown-content'>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+    </ul>
+
+    <!-- Categoria 6-->
+
+    <ul id='dropdown6' class='dropdown-content'>
+      <li><a href="#!">Nike</a></li>
+      <li><a href="#!">Society</a></li>
+      <li><a href="#!">Campo</a></li>
+    </ul>
+
   
-  <!-- Categoria 1-->
-  
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-  </ul>
 
-  <!-- Categoria 2-->
-  
-  <ul id='dropdown2' class='dropdown-content'>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-  </ul>
+</HEAD>
 
-  <!-- Categoria 3-->
-  
-  <ul id='dropdown3' class='dropdown-content'>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-  </ul>
-
-  <!-- Categoria 4-->
-  
-  <ul id='dropdown4' class='dropdown-content'>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-  </ul>
-
-  <!-- Categoria 5-->
-  
-  <ul id='dropdown5' class='dropdown-content'>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-  </ul>
-
-  <!-- Categoria 6-->
-  
-  <ul id='dropdown6' class='dropdown-content'>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-  </ul>
-
-</div>
-
-    </HEAD>
 <BODY>
 
-<div class="container" style="width: auto;">
+  <div class="container" style="width: auto;">
 
 
 
 
-  <br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
+    <br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
 
 
     <footer class="rodape">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-              </ul>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
           © 2023 Mappin
           <a class="grey-text text-lighten-4 right" href="#!">Saib</a>
-          </div>
         </div>
+      </div>
     </footer>
 
 
 
-</div>
+  </div>
 
 </BODY>
+
 </HTML>
