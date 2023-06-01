@@ -18,12 +18,6 @@
   <div class="nav">
     <a href="index.html"><img src="Imagens/logomappin4.png" class="logoMappin" ></a>
     <ul class="right hide-on-med-and-dow">
-      <li><a class="botao_container" href="#!" data-target="dropdown1">Novidades</a></li>
-      <li><a class="botao_container" href="#!" data-target="dropdown2">Masculino</a></li>
-      <li><a class="botao_container" href="#!" data-target="dropdown3">Feminino</a></li>
-      <li><a class="botao_container" href="#!" data-target="dropdown4">Calçados</a></li>
-      <li><a class="botao_container" href="#!" data-target="dropdown5">Camisas</a></li>
-      <li><a class="botao_container" href="#!" data-target="dropdown6">Acessórios</a></li>
       <li><a class="botao_principal" href="login.html">Login</a></li>
       <li><a class="botao_principal" href=".html">Meu perfil</a></li>
       <li><a class="botao_principal" href="cadastrocliente.html">Cadastre-se</a></li>
@@ -31,14 +25,25 @@
   </div>
 </nav>
 
+<div class="drop">
+  <ul>
+    <li><a class="botao_container" href="#!" data-target="dropdown1">Novidades</a></li>
+    <li><a class="botao_container" href="#!" data-target="dropdown2">Masculino</a></li>
+    <li><a class="botao_container" href="#!" data-target="dropdown3">Feminino</a></li>
+    <li><a class="botao_container" href="#!" data-target="dropdown4">Calçados</a></li>
+    <li><a class="botao_container" href="#!" data-target="dropdown5">Camisas</a></li>
+    <li><a class="botao_container" href="#!" data-target="dropdown6">Acessórios</a></li>
+  </ul>
+</div>
+
 <div class="categorias-container">
 
   <script>
-   // document.addEventListener('DOMContentLoaded', function() {
-    //  var elems = document.querySelectorAll('.dropdown-content');
-    //  var options = {
-    //    hover: true
-    //  };
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.dropdown-content');
+      var options = {
+        hover: true
+      };
       var instances = M.Dropdown.init(elems, options);
       hover: true
     });
