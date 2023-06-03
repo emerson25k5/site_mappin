@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<HTML>
+<HTML lang="pt-BR">
     <HEAD>
       <TITLE>Home</TITLE>
 
@@ -8,92 +8,208 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Emerson Santos">
     <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" type="text/css" href="estiloindex.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-<!-- NAV -->
 
-<nav class="nav" class="img-logo">
-  <div class="nav-wrapper">
-    <a href="#" class="img-logo" id="img-logo"></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">JavaScript</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div>
-
- <script>$('.dropdown-trigger').dropdown();</script>
-
-
-  <li>
-  <a class='dropdown-trigger' href='#' data-target='dropdown1'>Drop Me!</a>
-
-
-</div>
-  
-  <!-- Categoria 1-->
-  
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-    <li><a href="#!">Nike</a></li>
-    <li><a href="#!">Society</a></li>
-    <li><a href="#!">Campo</a></li>
-  </ul>
-
-</div>
 
     </HEAD>
 <BODY>
 
-<div class="container" style="width: auto;">
 
+  <!-- NAV -->
 
+<div class="container"> 
+  <nav class="navbar">
+    <div>
+      <ul>
+        <li style="float:left"><a href="index.html"><img src="Imagens/logomappin5.png" alt="Logo" class="logo"></a></li>
+        <li class="btnmenu"><a href="cadastrocliente.html" >Cadastro</a></li>
+        <li class="btnmenu"><a href="index.html">Loja</a></li>
+      </ul>
+      <ul class="categorias">
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso2">Tênis</a></li>
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Camisas</a></li>
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Suplementos</a></li>    <!--Botões de Categorias-->
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Bermudas</a></li>
+      </ul>
+      
+    </div>
+  </nav>
 
+  <!-- Lista drop 1-->
 
-  <br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
+  <ul id="menususpenso1" class="dropdown-content">
+    <li><a href="primeiroitem.html">Feminino</a></li>
+    <li><a href="primeiroitem.html">Masculino</a></li>
+    <li><a href="primeiroitem.html">Corrida</a></li>
+    <li><a href="primeiroitem.html">Promoções</a></li>       
+  </ul>
 
-
-    <footer class="rodape">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2023 Mappin
-          <a class="grey-text text-lighten-4 right" href="#!">Saib</a>
-          </div>
-        </div>
-    </footer>
-
-
-
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.dropdown-trigger');   //JS do Menu suspenso das cetegorias
+    var options = {
+      hover: true
+    };
+    M.Dropdown.init(dropdowns, options);
+  });
+  </script>
 </div>
 
+<div class="container">
+  <h1>Conheça as novidades!</h1>
+
+  <h5 style="text-align: center;">Camisas de time com até 35% de DESCONTO!!</h5>
+
+        <div class="produtos-container">
+
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card" href="index.html">
+                <div class="card-image">
+                  <img src="Imagens/camisa_time_ns.png">
+                  <span class="card-title" id="tituloproduto">10x R$20,00<br>R$200,00 à vista!</span>
+                </div>
+                <div class="card-content">
+                  <p>Camisa utilizada pelo Cristiano Ronaldo</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Confira</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="Imagens/camisa_time2.png">
+                  <span class="card-title" id="tituloproduto">Camisa de time</span>
+                </div>
+                <div class="card-content">
+                  <p>Camisa do Corinthians, ainda com o suor do Ronaldo fenômeno</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Confira</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="Imagens/camisa4.png">
+                  <span class="card-title" id="tituloproduto">Camisa de time</span>
+                </div>
+                <div class="card-content">
+                  <p>Compre agora, camisas de time com descontos especiais!</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Confira</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> 
+
+        <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br> <br><br> <br><br>
+
+        <div class="produtos-container">
+
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="Imagens/camisa6.png">
+                  <span class="card-title" id="tituloproduto">Camisa do Real Madrid</span>
+                </div>
+                <div class="card-content">
+                  <p>Compre agora, camisas de time com descontos especiais!</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Confira</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="Imagens/camisa_time2M.png">
+                  <span class="card-title" id="tituloproduto">Camisa de time</span>
+                </div>
+                <div class="card-content">
+                  <p>Camisa do Corinthians, ainda com o suor do Ronaldo fenômeno</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Confira</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="Imagens/camisa7.png">
+                  <span class="card-title" id="tituloproduto">Camisa de time</span>
+                </div>
+                <div class="card-content">
+                  <p>Compre agora, camisas de time com descontos especiais!</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Confira</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+  <br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
+  <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br> <br><br> <br><br>
+
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Mappin Sports</h5>
+          <p class="grey-text text-lighten-4">Aqui você encontra tudo para o seu bem estar!</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Redes sociais</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">TikTok</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Linkedin</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2023 Mappin
+      <a class="grey-text text-lighten-4 right" href="#!">Saiba mais</a>
+      </div>
+    </div>
+  </footer>
+</div>
 </BODY>
 </HTML>

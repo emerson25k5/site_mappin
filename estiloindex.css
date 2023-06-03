@@ -1,0 +1,37 @@
+.row {
+    height: 90px;
+    position: relative;
+}
+
+.card {
+    width: 200%;
+    height: auto;
+    position: relative;
+}
+
+
+.card-confira {
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+}
+
+#tituloproduto {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 120%;
+    bottom: -22px;
+    left: -17px;
+}
+
+.produtos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center; /* Alinha os cards horizontalmente no centro */
+    grid-gap: 10px;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+}
