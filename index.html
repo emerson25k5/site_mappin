@@ -29,82 +29,29 @@
 
   <nav>
     <div class="nav">
-      <a href="index.html"><img src="Imagens/logomappin3.png" class="logoMappin"></a>
+      <a href="index.html"></a>
       <ul class="right hide-on-med-and-dow">
+        <div class="drop-container">
+        <li><a class='botao_drop' href='#' data-target='dropdown1'>Drop Me!</a></li>
+        <li><a class='botao_drop' href='#' data-target='dropdown2'>Drop Me!</a></li>
+        <li><a class='botao_drop' href='#' data-target='dropdown3'>Drop Me!</a></li>
+        <li><a class='botao_drop' href='#' data-target='dropdown4'>Drop Me!</a></li>
+        <li><a class='botao_drop' href='#' data-target='dropdown5'>Drop Me!</a></li>
+        <li><a class='botao_drop' href='#' data-target='dropdown6'>Drop Me!</a></li>
         <li><a class="botao_principal" href="login.html">Login</a></li>
         <li><a class="botao_principal" href=".html">Meu perfil</a></li>
         <li><a class="botao_principal" href="cadastrocliente.html">Cadastre-se</a></li>
+      </div>
       </ul>
     </div>
   </nav>
-
-
-  <div class="drop-container">
-        <ul>
-          <li><a class='botao_drop' href='#' data-target='dropdown1'>Drop Me!</a></li>
-          <li><a class='botao_drop' href='#' data-target='dropdown2'>Drop Me!</a></li>
-          <li><a class='botao_drop' href='#' data-target='dropdown3'>Drop Me!</a></li>
-          <li><a class='botao_drop' href='#' data-target='dropdown4'>Drop Me!</a></li>
-          <li><a class='botao_drop' href='#' data-target='dropdown5'>Drop Me!</a></li>
-          <li><a class='botao_drop' href='#' data-target='dropdown6'>Drop Me!</a></li>
-        </ul>
-  </div>
 
     <!-- Categoria 1-->
 
     <ul id='dropdown1' class='dropdown-content'>
       <li><a href="#!">Nike</a></li>
       <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
-      <li><a href="#!">Nike</a></li>
-      <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
-      <li><a href="#!">Nike</a></li>
-      <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
     </ul>
-
-    <!-- Categoria 2-->
-
-    <ul id='dropdown2' class='dropdown-content'>
-      <li><a href="#!">Nike</a></li>
-      <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
-    </ul>
-
-    <!-- Categoria 3-->
-
-    <ul id='dropdown3' class='dropdown-content'>
-      <li><a href="#!">Nike</a></li>
-      <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
-    </ul>
-
-    <!-- Categoria 4-->
-
-    <ul id='dropdown4' class='dropdown-content'>
-      <li><a href="#!">Nike</a></li>
-      <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
-    </ul>
-
-    <!-- Categoria 5-->
-
-    <ul id='dropdown5' class='dropdown-content'>
-      <li><a href="#!">Nike</a></li>
-      <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
-    </ul>
-
-    <!-- Categoria 6-->
-
-    <ul id='dropdown6' class='dropdown-content'>
-      <li><a href="#!">Nike</a></li>
-      <li><a href="#!">Society</a></li>
-      <li><a href="#!">Campo</a></li>
-    </ul>
-
-  
 
 </HEAD>
 
@@ -112,10 +59,22 @@
 
   <div class="container" style="width: auto;">
 
+    <script>  
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems, options);
+    });
+    </script>
+
+      <div class="carousel carousel-slider">
+        <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+        <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+        <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+      </div>
 
 
-
-    <br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br>
+    <br> <br> <br><br> <br>
 
 
     <footer class="rodape">
