@@ -1,0 +1,35 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: white;
+}
+
+
+.box {
+    color: rgb(0, 0, 0);
+    position: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(110%, -8%);
+    background-color: rgba(255, 255, 255, 0.363);
+    padding: 15px;
+    border-radius:  5px;
+    width: 30%;
+    height: auto;
+    font-weight: bold;
+}
+
+#submit {
+  background-image: linear-gradient(to right, #ff9100c5, #e41414d3);
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+#submit:hover{
+  background-image: linear-gradient(to right, #ff0000f1, #ff7b00dc);
+}

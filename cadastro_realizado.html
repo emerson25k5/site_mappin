@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<HTML lang="pt-BR">
+    <HEAD>
+      <TITLE>Parabéns!</TITLE>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Site de vendas digital">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Emerson Santos">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" type="text/css" href="estiloindex.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+
+    </HEAD>
+<BODY>
+
+      <!-- NAV -->
+
+<div class="container"> 
+    <nav class="navbar">
+      <div>
+        <ul>
+          <li style="float:left"><a href="index.html"><img src="Imagens/logomappin4.png" alt="Logo" class="logo"></a></li>
+          <li class="btnmenu"><a href="cadastrocliente.html" >Cadastro</a></li>
+          <li class="btnmenu"><a href="index.html">Loja</a></li>
+        </ul>
+        <ul class="categorias">
+          <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
+          <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso2">Tênis</a></li>
+          <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Camisas</a></li>
+          <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Suplementos</a></li>    <!--Botões de Categorias-->
+          <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Bermudas</a></li>
+        </ul>
+        
+      </div>
+    </nav>
+
+      <!-- Lista drop 1-->
+
+  <ul id="menususpenso1" class="dropdown-content">
+    <li><a href="primeiroitem.html">Feminino</a></li>
+    <li><a href="primeiroitem.html">Masculino</a></li>
+    <li><a href="primeiroitem.html">Corrida</a></li>
+    <li><a href="primeiroitem.html">Promoções</a></li>       
+  </ul>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.dropdown-trigger');   //JS do Menu suspenso das cetegorias
+    var options = {
+      hover: true
+    };
+    M.Dropdown.init(dropdowns, options);
+  });
+  </script>
+</div>
+
+<div class="container">
+
+
+                <DIV style="text-align: center;font-size: 15px;">
+                <h1 style="color:green;" style="font-size: 20px;"> PARABÉNS</h1>
+                <H3 style="font-size: 30px";>AGORA VOCÊ PODE OBTER CENTENAS DE PRODUTOS COM ATÉ <B>70% DE DESCONTO</B> ALÉM DE <b>FRETE GRATIS</b> EM OUTROS MILHARES!</H3>
+                <h5>CLIQUE PARA VER AS<a href="index.html" style="color: darkorange;"> NOVIDADES</a></h5>
+                </DIV>
+
+
+
+
+
+                <footer class="rodape">
+                    <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                        <h5 class="white-text">Mappin Sports</h5>
+                        <p class="grey-text text-lighten-4">Aqui você encontra tudo para o seu bem estar!</p>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Redes sociais</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">TikTok</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Linkedin</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="footer-copyright">
+                    <div class="container">
+                    © 2023 Mappin
+                    <a class="grey-text text-lighten-4 right" href="#!">Saiba mais</a>
+                    </div>
+                    </div>
+                </footer>
+</div>
+</BODY>
+</HTML>

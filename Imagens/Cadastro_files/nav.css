@@ -1,0 +1,30 @@
+.navbar {
+    background-color: rgb(212, 10, 10);  
+}
+
+.btnmenu {
+    float: right;
+}
+
+.categorias {
+    display: flex; /* Utiliza o flexbox para alinhar os itens */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+.botao_categoria {
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.logo {
+    width: 100px; /* Largura da imagem do logo */
+    height: auto; /* Altura da imagem do logo */
+    position: absolute;
+    top: 10px;
+    left: auto;
+  }
+
+  .rodape {
+    background-color: rgb(212, 10, 10);
+  }
