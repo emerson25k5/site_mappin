@@ -1,16 +1,3 @@
-.nav {
-  background-image: linear-gradient(to right, #ff9100, #aa157b);
-}
-
-.logoMappin {
-  background-image: url(Imagens/logomappin4.png);
-    width: 10px;
-    height: 10px;
-    background-size: cover;
-    background-position: left;
-}
-
-
 body{
   font-family: Arial, Helvetica, sans-serif;
   background-image: linear-gradient(to right, rgb(105, 43, 81), rgb(73, 6, 59));
@@ -29,13 +16,6 @@ body{
     width: 30%;
     height: auto;
 }
-
-
-.logoMappin {
-  position: initial;
-  width: 10%;
-}
-
 
 #submit {
   background-image: linear-gradient(to right, #ff9100d7, #aa157bd3);
