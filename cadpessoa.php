@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Executa a query
     if (mysqli_query($conexao, $sql)) {
-        echo "Registro inserido com sucesso!";
         header("Location: cadastro_realizado.html");
         exit();
     } else {
