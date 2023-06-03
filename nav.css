@@ -7,9 +7,9 @@
 }
 
 .categorias {
-    display: flex; /* Utiliza o flexbox para alinhar os itens */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 .botao_categoria {
@@ -18,8 +18,8 @@
 }
 
 .logo {
-    width: 100px; /* Largura da imagem do logo */
-    height: auto; /* Altura da imagem do logo */
+    width: 100px; 
+    height: auto; 
     position: absolute;
     top: 10px;
     left: auto;
