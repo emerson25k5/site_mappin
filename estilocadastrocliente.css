@@ -19,7 +19,7 @@ body{
 }
 
 #submit {
-  background-image: linear-gradient(to right, #ff9100c5, #e41414d3);
+  background-image: linear-gradient(to right, #ec6363c5, #f31a1ad3);
   width: 100%;
   border: none;
   padding: 15px;
@@ -31,5 +31,5 @@ body{
 
 
 #submit:hover{
-  background-image: linear-gradient(to right, #ff0000f1, #ff7b00dc);
+  background-image: linear-gradient(to right, #ff0000f1, #ee4343dc);
 }

@@ -13,6 +13,7 @@
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <script language="javascript">
           function voltar(){
@@ -23,32 +24,75 @@
     <HEAD>
       <!-- NAV -->
 
-<div class="container"> 
+<div> 
   <nav class="navbar">
-    <div>
+    <div class="container">
       <ul>
-        <li style="float:left"><a href="index.html"><img src="Imagens/logomappin5.png" alt="Logo" class="logo"></a></li>
-        <li class="btnmenu"><a href="cadastrocliente.html" >Cadastro</a></li>
-        <li class="btnmenu"><a href="index.html">Loja</a></li>
-      </ul>
-      <ul class="categorias">
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso2">Tênis</a></li>
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Camisas</a></li>
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Suplementos</a></li>    <!--Botões de Categorias-->
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Bermudas</a></li>
+        <li style="float:left"><a href="index.html"><img src="Imagens/logomappin4.png" alt="Logo" class="logo"></a></li>
+        <li class="btnmenu"><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
+        <li class="btnmenu"><a href="carrinho.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+        <li class="btnmenu"><a href="index.html"><i class="material-icons" style="font-size: 200%;">store</i></a></li>
       </ul>
       
+      <ul class="categorias">
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Maculino</a></li>
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Infantil</a></li>    <!--Botões de Categorias-->
+        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Acessórios</a></li>
+      </ul>
     </div>
   </nav>
+  
 
   <!-- Lista drop 1-->
 
   <ul id="menususpenso1" class="dropdown-content">
-    <li><a href="primeiroitem.html">Feminino</a></li>
-    <li><a href="primeiroitem.html">Masculino</a></li>
+    <li><a href="primeiroitem.html">Calçados</a></li>
+    <li><a href="primeiroitem.html">Camisetas</a></li>
+    <li><a href="primeiroitem.html">Acessórios</a></li>
+    <li><a href="primeiroitem.html">Promoções</a></li> 
+    <li><a href="primeiroitem.html">Novidades</a></li>       
+  </ul>
+
+  <ul id="menususpenso2" class="dropdown-content">
+    <li><a href="primeiroitem.html">Calçados</a></li>
+    <li><a href="primeiroitem.html">Camisetas</a></li>
+    <li><a href="primeiroitem.html">Acessórios</a></li>
+    <li><a href="primeiroitem.html">Promoções</a></li> 
+    <li><a href="primeiroitem.html">Novidades</a></li>       
+  </ul>
+
+  <ul id="menususpenso2" class="dropdown-content">
+    <li><a href="primeiroitem.html">Calçados</a></li>
+    <li><a href="primeiroitem.html">Camisetas</a></li>
+    <li><a href="primeiroitem.html">Acessórios</a></li>
+    <li><a href="primeiroitem.html">Promoções</a></li> 
+    <li><a href="primeiroitem.html">Novidades</a></li>       
+  </ul>
+
+  <ul id="menususpenso3" class="dropdown-content">
+    <li><a href="primeiroitem.html">Calçados</a></li>
+    <li><a href="primeiroitem.html">Camisetas</a></li>
+    <li><a href="primeiroitem.html">Acessórios</a></li>
+    <li><a href="primeiroitem.html">Promoções</a></li> 
+    <li><a href="primeiroitem.html">Novidades</a></li>       
+  </ul>
+
+  <ul id="menususpenso4" class="dropdown-content">
+    <li><a href="primeiroitem.html">Calçados</a></li>
+    <li><a href="primeiroitem.html">Camisetas</a></li>
+    <li><a href="primeiroitem.html">Acessórios</a></li>
+    <li><a href="primeiroitem.html">Promoções</a></li> 
+    <li><a href="primeiroitem.html">Novidades</a></li>       
+  </ul>
+
+  <ul id="menususpenso5" class="dropdown-content">
+    <li><a href="primeiroitem.html">Novidades</a></li>
+    <li><a href="primeiroitem.html">Ciclismo</a></li>
     <li><a href="primeiroitem.html">Corrida</a></li>
-    <li><a href="primeiroitem.html">Promoções</a></li>       
+    <li><a href="primeiroitem.html">Treinando em casa</a></li> 
+    <li><a href="primeiroitem.html"></a>Futebol</li>       
   </ul>
 
   <script>
@@ -145,7 +189,7 @@
                   <label for="nascimento" style="color:black">Data de nascimento</label>
                 </div>
 
-                <input type="submit" value="Enviar" id="submit">
+                <input type="submit" value="Criar conta" id="submit">
             
         </fieldset>    
       </form>

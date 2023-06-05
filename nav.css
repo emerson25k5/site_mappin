@@ -1,9 +1,10 @@
 .navbar {
-    background-color: rgb(212, 10, 10);  
+    background-color: rgb(212, 10, 10);
 }
 
 .btnmenu {
     float: right;
+    color:black;
 }
 
 .categorias {
@@ -13,17 +14,18 @@
 }
 
 .botao_categoria {
-    border-radius: 10px;
-    font-weight: bold;
+    float: center;
+    border-radius: 5%;
 }
 
-.logo {
-    width: 100px; 
-    height: auto; 
-    position: absolute;
-    top: 10px;
-    left: auto;
-  }
+.logo{
+width: 100px; /* Largura da imagem do logo */
+height: auto; /* Altura da imagem do logo */
+position: absolute;
+top: 1%;
+left: auto;
+}
+
 
   .rodape {
     background-color: rgb(212, 10, 10);
