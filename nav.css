@@ -4,29 +4,22 @@
 
 .btnmenu {
     float: right;
-    color:black;
 }
 
 .categorias {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    float: center;    
 }
 
 .botao_categoria {
-    float: center;
-    border-radius: 5%;
+    align-items: center;
 }
 
 .logo{
-width: 100px; /* Largura da imagem do logo */
-height: auto; /* Altura da imagem do logo */
-position: absolute;
-top: 1%;
-left: auto;
+width: 11%;
+height: 11%s;
 }
 
-
-  .rodape {
+.rodape {
     background-color: rgb(212, 10, 10);
   }
