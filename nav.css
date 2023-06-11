@@ -12,16 +12,16 @@
     display: flex; 
     justify-content: center;
     align-items: center;
+    float: bottom;
 }
 
 .botao_categoria {
     float: center;
     border-radius: 5%;
-    margin: 1px;
 }
 
 .logo{
-width: 10%;
+width: 7%;
 height: auto;
 position: absolute;
 top: 2.5%;
