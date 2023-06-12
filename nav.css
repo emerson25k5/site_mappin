@@ -1,6 +1,6 @@
 .navbar {
     background-color: rgb(212, 10, 10);
-    height: 100px;
+    height: auto;
 }
 
 .btnmenu {
@@ -25,7 +25,6 @@ width: 7%;
 height: auto;
 position: absolute;
 top: 2.5%;
-left: auto;
 }
 
 
