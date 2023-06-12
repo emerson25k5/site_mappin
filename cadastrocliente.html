@@ -24,25 +24,26 @@
     <HEAD>
       <!-- NAV -->
 
-<div> 
-  <nav class="navbar">
-    <div class="container">
-      <ul>
-        <dl style="float:left"><a href="index.html"><img src="Imagens/logomappin4.png" alt="Logo" class="logo"></a></dl>
-        <li class="btnmenu"><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
-        <li class="btnmenu"><a href="carrinho.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
-        <li class="btnmenu"><a href="index.html"><i class="material-icons" style="font-size: 200%;">store</i></a></li>
-      </ul>
-      
-      <ul class="categorias">
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Infantil</a></li>    <!--Botões de Categorias-->
-        <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Acessórios</a></li>
-      </ul>
-    </div>
-  </nav>
+      <nav class="navbar-container">
+        <div class="container">
+          <ul class="btnmenu">
+            <li><a href="index.html"><i class="material-icons" style="font-size: 200%;">store</i></a></li>
+            <li><a href="carrinho.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+            <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
+          </ul>
+        <div class="logo-container">
+          <a href="index.html"><img src="Imagens/logomappin_branco.png" class="logo_mappin"></a>
+        </div>
+          <ul class="categorias">
+            <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
+            <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
+            <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
+            <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
+            <li class="botao_categoria"><a class="dropdown-trigger" data-target="menususpenso5">Acessórios</a></li>
+          </ul>
+    
+        </div>
+      </nav>
   
 
   <!-- Lista drop 1-->
@@ -96,15 +97,17 @@
   </ul>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var dropdowns = document.querySelectorAll('.dropdown-trigger');   //JS do Menu suspenso das cetegorias
-    var options = {
-      hover: true
-    };
-    M.Dropdown.init(dropdowns, options);
-  });
-  </script>
-</div>
+    document.addEventListener('DOMContentLoaded', function() {
+      var dropdowns = document.querySelectorAll('.dropdown-trigger');   //JS do Menu suspenso das cetegorias
+      var options = {
+          coverTrigger: false,
+          hover: true,
+          openOnClick: true,
+          outDuration: 100
+      };
+      M.Dropdown.init(dropdowns, options);
+    });
+    </script>
 
     </HEAD>
  <BODY>
