@@ -1,31 +1,43 @@
-.navbar {
+.navbar-container {
     background-color: rgb(212, 10, 10);
-    height: 100px;
+    width: auto;
+    height: auto;
+    position: sticky;
+    display: flex;
 }
 
 .btnmenu {
     float: right;
-    color:black;
+    width: auto;
+    height: auto;
 }
 
 .categorias {
-    display: flex; 
+    display: flex;
+    width: auto;
+    height: auto;
     justify-content: center;
-    align-items: center;
 }
 
-.botao_categoria {
+.dropdown-trigger {
     float: center;
-    border-radius: 5%;
-    margin: 1px;
+    bottom: 2px;
+    font-weight: bold;
+    background-color: rgb(173, 15, 15);
+    border-radius: 7%;
+    margin-right: 3px;
+    padding: 0px 25px;
+    margin-bottom: 10px;
 }
 
-.logo{
-width: 10%;
+.logo-container {
+    display: flex;
+}
+
+.logo_mappin{
+width: 120px;
 height: auto;
-position: absolute;
-top: 2.5%;
-left: auto;
+margin-top: 15px;
 }
 
 

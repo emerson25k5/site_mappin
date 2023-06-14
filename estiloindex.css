@@ -40,7 +40,7 @@
 
 .produtos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
     justify-content: center; /* Alinha os cards horizontalmente no centro */
     grid-gap: 1%;
     padding: 5%;
