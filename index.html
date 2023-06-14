@@ -18,24 +18,27 @@
 <!-- NAV -->
 
 
-<nav class="navbar-container">
-  <div class="container">
-    <ul class="btnmenu">
-      <li><a href="index.html"><i class="material-icons" style="font-size: 200%;">store</i></a></li>
-      <li><a href="carrinho.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
-      <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
-    </ul>
-  <div class="logo-container">
-    <a href="index.html"><img src="Imagens/logomappin_branco.png" class="logo_mappin"></a>
-  </div>
-    <ul class="categorias">
-      <li><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
-      <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
-      <li><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
-      <li><a class="dropdown-trigger" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
-      <li><a class="dropdown-trigger" data-target="menususpenso5">Acessórios</a></li>
-    </ul>
+<nav class="navbar">
+  <div class="conteudo container">
 
+        <ul class="botao_menu">
+          <li ><a href="index.html"><i class="material-icons" style="font-size: 200%;">store</i></a></li>
+          <li><a href="carrinho.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+          <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
+        </ul>
+
+
+
+        <a href="index.html"><img src="Imagens/logomappin_branco.png" class="logo_mappin"></a>
+
+        <ul class="categorias">
+          <li><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
+          <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
+          <li><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
+          <li><a class="dropdown-trigger" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
+          <li><a class="dropdown-trigger" data-target="menususpenso5">Acessórios</a></li>
+        </ul>
+      
   </div>
 </nav>
 
@@ -100,159 +103,65 @@ document.addEventListener('DOMContentLoaded', function() {
     </HEAD>
 <BODY>
 
-  <br> <br>
 
-<div class="container" style="background-color:rgba(102, 241, 89, 0.897); padding: 1%; border-radius: 2%; width: 1300px; height: 400px;">
-
-
-<h1>A lenda está de volta!</h1>
+<div class="wellcome">
 
 
-<p style=" font-size: 180%;">Bem-vindo à nova era da Mappin, agora no mundo digital! Prepare-se para mergulhar em um universo esportivo incrível, repleto de estilo e modernidade. Nossa marca renasceu com uma proposta irresistível: unir a paixão pelo esporte com o conforto e o charme das roupas casuais contemporâneas.</p>
-</p>
+    <div class="parallax-container">
+      <div class="parallax"><img src="Imagens/chutando_gol.jpg"></div>
+    </div>
+    <div class="section yellow">
+      <div class="row container">
+        <h2 class="header">Bem-vindo à nova era da Mappin!</h2>
+        <p class="grey-text text-darken-3 lighten-3" style="font-size: 25px;">Prepare-se para mergulhar em um universo esportivo incrível, repleto de estilo e modernidade. Nossa marca renasceu com uma proposta irresistível: unir a paixão pelo esporte com o conforto e o charme das roupas casuais contemporâneas.</p>
+      </div>
+      <div class="row container">
+        <h3 class="header">Conheça nossos produtos!</h3>
+        <p class="grey-text text-darken-3 lighten-3"></p>
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">home</i>Tudo para sua casa</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="Imagens/corrida1.jpg"></div>
+    </div>
+
+
+    <script>
+                  document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.parallax');
+          var instances = M.Parallax.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems);
+          });
+    </script>
 
 </div>
-<br>
 
-<h3 style="text-align: center">Conheça as novidades!</h3>
-
-
-<div class="container">
-
-  <div class="card-image" href="#">
-    <img src="Imagens/raquete_tenis.jpg">
-    <h3 id="descrição_categoria">Equipamentos e Acessórios</h3>
-  </div>
-  <div>
-    
-
-    <div class="card-image" href="#">
-      <img src="Imagens/raquete_tenis.jpg">
-      <h3 id="descrição_categoria">Equipamentos e Acessórios</h3>
-    </div>
-    <div>
-      
-    </div>
-
-        <!--<div class="produtos-container">
-
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                
-                <div class="card-image" href="#">
-                  <img src="Imagens/raquete_tenis.jpg">
-                  <span class="card-title" id="tituloproduto">Equipamentos e Acessórios</span>
-                </div>
-                <div class="card-action">
-                  <a href="#">Confira</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="Imagens/chutando_gol.jpg">
-                  <span class="card-title" id="tituloproduto">Futebol</span>
-                </div>
-                <div class="card-content">
-                  <p>Tudo para o futebol profissional ou aquela pelada no fim de semana com os amigos.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">Confira</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="Imagens/ciclismo1.jpg">
-                  <span class="card-title" id="tituloproduto">Cicilismo</span>
-                </div>
-                <div class="card-content">
-                  <p>Tudo o que é necessário para estar preparado para dar aquele pedal no final de semana!</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">Confira</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div> 
-
-        <div class="produtos-container">
-
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="Imagens/academia1.jpg">
-                  <span class="card-title" id="tituloproduto">Acadêmia</span>
-                </div>
-                <div class="card-content">
-                  <p>Que tal fazer da sua casa sua acadêmia particular e treinar com conforto e comodidade?</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">Confira</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="Imagens/corrida1.jpg">
-                  <span class="card-title" id="tituloproduto">Tênis para desempenho</span>
-                </div>
-                <div class="card-content">
-                  <p>Camisa do Corinthians, ainda com o suor do Ronaldo fenômeno</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">Confira</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="Imagens/proteínas.jpg">
-                  <span class="card-title" id="tituloproduto">Dieta e Proteínas</span>
-                </div>
-                <div class="card-content">
-                  <p>Tudo que o seu corpo precisa para se manter em forma e saudável.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">Confira</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>-->
-
-  <br> <br> <br><br> <br> <br><br>
-
-
-  <footer class="rodape">
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Mappin Sports</h5>
-          <p class="grey-text text-lighten-4">Aqui você encontra tudo para o seu bem estar!</p>
+          <p class="grey-text text-lighten-4">Aqui você encontra tudo o que te faz bem!</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Redes sociais</h5>
@@ -272,6 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </footer>
-</div>
+
 </BODY>
 </HTML>

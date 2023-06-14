@@ -4,4 +4,9 @@
 
 h1 {
     text-align: center;
+    color: white;
+}
+
+p {
+    color: rgb(255, 255, 255);
 }

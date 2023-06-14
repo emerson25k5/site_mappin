@@ -10,7 +10,6 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(110%, -8%);
-    background-color: rgba(255, 255, 255, 0.363);
     padding: 15px;
     border-radius:  5px;
     width: 30%;
@@ -18,8 +17,10 @@ body{
     font-weight: bold;
 }
 
+
+
 #submit {
-  background-image: linear-gradient(to right, #ec6363c5, #f31a1ad3);
+  background-color: rgba(255, 0, 0, 0.795);
   width: 100%;
   border: none;
   padding: 15px;
@@ -30,6 +31,6 @@ body{
 }
 
 
-#submit:hover{
-  background-image: linear-gradient(to right, #ff0000f1, #ee4343dc);
+#submit:hover {
+  background-color: rgba(255, 0, 0, 0.918)
 }

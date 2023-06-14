@@ -1,4 +1,4 @@
-.navbar-container {
+.navbar {
     background-color: rgb(212, 10, 10);
     width: auto;
     height: auto;
@@ -6,7 +6,13 @@
     display: flex;
 }
 
-.btnmenu {
+.conteudo {
+    width: auto;
+    height: autos;
+}
+
+
+.botao_menu {
     float: right;
     width: auto;
     height: auto;
@@ -21,26 +27,25 @@
 
 .dropdown-trigger {
     float: center;
-    bottom: 2px;
     font-weight: bold;
     background-color: rgb(173, 15, 15);
     border-radius: 7%;
     margin-right: 3px;
     padding: 0px 25px;
     margin-bottom: 10px;
+    margin-top: -50px;
+    width: auto;
+    height: auto;
 }
 
-.logo-container {
-    display: flex;
-}
 
 .logo_mappin{
-width: 120px;
+width: 9%;
 height: auto;
 margin-top: 15px;
 }
 
 
-  .rodape {
-    background-color: rgb(212, 10, 10);
+  .page-footer {
+    background-color: rgb(212, 10, 10) !important;
   }
