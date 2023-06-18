@@ -28,7 +28,7 @@
 
 
 
-      <a href="index.html"><img src="Imagens/logomappin_branco.png" class="logo_mappin"></a>
+      <a href="index.html"><img src="Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
 
       <ul class="categorias">
         <li><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
@@ -102,23 +102,17 @@
 <BODY>
 
 
-<!--<div class="wellcome">
+  <div class="wellcome">
 
-
-    <div class="parallax-container">
-      <div class="parallax"><img src="Imagens/chutando_gol.jpg"></div>
-    </div>
-    <div class="section yellow">
+    <div class="section yellow" style="align-content: center;">
       <div class="row container">
         <h2 class="header">Bem-vindo à nova era da Mappin!</h2>
-        <p class="grey-text text-darken-3 lighten-3" style="font-size: 25px;">Prepare-se para mergulhar em um universo esportivo incrível, repleto de estilo e modernidade. Nossa marca renasceu com uma proposta irresistível: unir a paixão pelo esporte com o conforto e o charme das roupas casuais contemporâneas.</p>
+        <p class="grey-text text-darken-3 lighten-3">Prepare-se para mergulhar em um universo incrível, repleto de estilo e modernidade. Nossa marca renasceu com uma proposta irresistível: unir a paixão pelo esporte com o conforto e o charme das roupas casuais contemporâneas.</p>
       </div>
-      <div class="row container">
-        <p class="grey-text text-darken-3 lighten-3"></p>
-        <ul class="collapsible">
+        <ul class="collapsible container">
           <li>
             <div class="collapsible-header"><i class="material-icons">home</i>Tudo para o seu lar!</div>
-            <div class="collapsible-body" ><a href="#">Móveis</div>
+            <div class="collapsible-body" ><a href="#">Móveis</a></div>
             <div class="collapsible-body" ><a href="#">Decoração</a></div>
             <div class="collapsible-body" ><a href="#">Utensílios domésticos</a></div>
             <div class="collapsible-body" ><a href="#">Eletrodomésticos</a></div>
@@ -133,34 +127,34 @@
           <li>
             <div class="collapsible-header"><i class="material-icons">directions_bike</i>Qual o seu esporte favorito?</div>
             <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
-            <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
-            <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
           </li>
         </ul>
-      </div>
     </div>
     <div class="parallax-container">
-      <div class="parallax"><img src="Imagens/ciclismo1.jpg"></div>
+      <div class="parallax"><img src="Imagens/cama, mesa, banho3.jpg" alt="cama-mesa-banho"></div>
     </div>
+            
 
+  </div>
 
-    <script>
-                  document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.parallax');
-          var instances = M.Parallax.init(elems);
-        });
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
+    var options = {
+      responsiveThreshold: 0
+    }
+  });
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');   
+      var instances = M.Collapsible.init(elems);
+      });
       </script>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.collapsible');
-            var instances = M.Collapsible.init(elems);
-          });
-    </script>
 
-</div>
 
-  <footer class="page-footer">
+
+    <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -184,7 +178,7 @@
       <a class="grey-text text-lighten-4 right" href="#!">Saiba mais</a>
       </div>
     </div>
-  </footer>-->
+    </footer>
 
 </BODY>
 </HTML>
