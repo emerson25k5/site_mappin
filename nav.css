@@ -26,8 +26,8 @@
 }
 
 .dropdown-trigger {
-    background-color: rgb(255, 255, 255) !important;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0) !important;
+    background-color: rgb(255, 255, 255);
     float: center;
     font-weight: bold;
     border-radius: 7%;
@@ -40,13 +40,8 @@
 }
 
 .dropdown-trigger:hover {
-    background-color: rgba(255, 255, 255, 0.342) !important;
-    color: white;
-}
-
-.subcat {
-    color: black !important;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.342);
+    color: rgb(0, 0, 0);
 }
 
 
