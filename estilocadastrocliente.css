@@ -1,0 +1,35 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: white;
+}
+
+
+.box {
+    color: rgb(0, 0, 0);
+    position: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(62%, -8%);
+    padding: 15px;
+    border-radius:  5px;
+    width: 45%;
+    height: auto;
+    font-weight: bold;
+}
+
+
+#submit {
+  background-color: rgba(255, 0, 0, 0.795);
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+#submit:hover {
+  background-color: rgba(255, 0, 0, 0.918)
+}

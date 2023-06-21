@@ -1,0 +1,58 @@
+.navbar {
+    background-color: rgb(212, 10, 10);
+    width: auto;
+    height: auto;
+    position: sticky;
+    display: flex;
+}
+
+.conteudo {
+    width: auto;
+    height: autos;
+}
+
+
+.botao_menu {
+    float: right;
+    width: auto;
+    height: auto;
+}
+
+.categorias {
+
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+}
+
+.dropdown-trigger {
+    color: rgb(0, 0, 0) !important;
+    background-color: rgb(255, 255, 255);
+    float: center;
+    font-weight: bold;
+    border-radius: 7%;
+    margin-right: 3px;
+    padding: 0px 25px;
+    margin-bottom: 10px;
+    margin-top: -8px;
+    width: auto;
+    height: auto;
+}
+
+.dropdown-trigger:hover {
+    background-color: rgba(255, 255, 255, 0.342);
+    color: rgb(0, 0, 0);
+}
+
+
+.logo_mappin{
+width:13%;
+height: auto;
+margin-top: 15px;
+}
+
+
+  .page-footer {
+    background-color: rgb(212, 10, 10) !important;
+  }
