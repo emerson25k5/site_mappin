@@ -45,6 +45,11 @@
     color: rgb(0, 0, 0);
 }
 
+.sidenav {
+    background-color: dark;
+    color: white;
+
+}
 
 .logo_mappin{
 width:18%;
