@@ -52,6 +52,9 @@ height: auto;
 margin-top: 15px;
 }
 
+.back-logo {
+    background-color: rgb(212, 10, 10);
+}
 
   .page-footer {
     background-color: rgb(212, 10, 10) !important;
