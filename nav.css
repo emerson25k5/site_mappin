@@ -1,9 +1,13 @@
 .navbar {
-    background-color: #006400;
+    background-color: rgb(212, 10, 10);
     width: auto;
     height: auto;
     position: sticky;
     display: flex;
+}
+
+p {
+    font-size: 190%;
 }
 
 .conteudo {
@@ -19,6 +23,7 @@
 }
 
 .categorias {
+
     display: flex;
     width: auto;
     height: auto;
@@ -39,9 +44,25 @@
     height: auto;
 }
 
-.dropdown-trigger:hover {
-    background-color: rgba(255, 255, 255, 0.342);
+.dropdown-trigger:hover { /*conteúdo do drop categorias hover*/
+    background-color: rgba(255, 255, 255, 0.61);
     color: rgb(0, 0, 0);
+}
+
+.dropdown-content { /*conteúdo do drop categorias*/
+    background-color: rgb(255, 255, 255) !important;
+    color: white !important;
+    text-align: center;
+}
+
+.back_list { /*lista suspensa*/
+    color: white !important;
+    text-align: center !important;
+}
+
+.back_list:hover { /*lista suspensa hover*/
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 
@@ -51,6 +72,37 @@ height: auto;
 margin-top: 15px;
 }
 
+#mobile-demo {
+    background-color: rgba(0, 0, 0, 0.753);
+    display: center;
+}
+
+.namecat {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+#bt {
+    background-color: green;
+    border-radius: 3px;
+    align-items: center;
+}
+
+#bt:hover {
+    background-color: rgba(98, 173, 98, 0.658);
+    border-radius: 3px;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+.collapsible-body {
+    background-color: white;
+    font-size: 150%;
+    color: black !important;
+    text-align: center;
+}
 
   .page-footer {
     background-color: rgb(212, 10, 10) !important;
