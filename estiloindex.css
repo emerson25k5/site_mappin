@@ -10,18 +10,6 @@ p {
     color: rgb(255, 255, 255);
 }
 
-#menu {
-    position: fixed;
-    z-index: 99999;
-    right: 5%;
-    bottom: 5%;
-    background-color: rgb(0, 255, 0);
-    background-image: url(Imagens/whats_icon.png);
-    background-size: cover;
-    width: 55px;
-    height: 55px;
-}
-
 .section {
     background-color: #B2F594;
 }

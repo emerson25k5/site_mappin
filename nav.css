@@ -110,5 +110,17 @@ margin-top: 15px;
 }
 
   .page-footer {
-    background-color: rgb(212, 10, 10) !important;
+    background-color: #559F33 !important;
   }
+
+  #menu {
+    position: fixed;
+    z-index: 99999;
+    right: 5%;
+    bottom: 5%;
+    background-color: rgb(0, 255, 0);
+    background-image: url(Imagens/whats_icon.png);
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+}

@@ -1,0 +1,97 @@
+div.cards {
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+div.card {
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  width: 300px;
+  z-index: 1;
+
+  img {
+    max-width: 300px;
+  }
+}
+
+.botao_card {
+
+}
+
+.add_chart {
+    float: right;
+    right: 10px;
+    background-color: rgba(0, 132, 255, 0.658) !important;
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+
+    .chart {
+        color: rgb(0, 0, 0) !important;
+    }
+}
+
+.add_chart:hover {
+    float: right;
+    right: 10px;
+    background-color: rgba(0, 132, 255, 0.658) !important;
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+
+    .chart {
+        color: rgb(255, 255, 255) !important;
+    }
+}
+
+.favorito {
+    float: left;
+    left: 5%;
+    background-color: rgba(228, 48, 48, 0.664) !important;
+    font-size: 20px;
+    width: 50%;
+    height: 15%;
+    text-align: center;
+    .favorite {
+        color: rgb(0, 0, 0) !important;
+    }
+
+}
+
+.favorito:hover {
+    float: left;
+    left: 5%;
+    background-color: rgba(228, 48, 48, 0.664) !important;
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+
+    .favorite {
+        color: rgb(255, 255, 255) !important;
+    }
+
+}
+
+.card_titulo {
+    margin-top: 1%;
+
+}
+
+.informacoes {
+    text-align: center;
+    font-size:120%;
+    align-content: centers;
+    width: 100%;
+    color: black !important;
+    margin-top: 10%;
+}
+
+.h5 {
+    font-size: 50%;
+    font-weight: bold;
+}
