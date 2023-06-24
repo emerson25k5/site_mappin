@@ -24,4 +24,3 @@ if (isset($entrar)) {
 
 mysqli_close($conexao);
 ?>
-

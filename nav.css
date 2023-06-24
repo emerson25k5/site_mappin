@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(212, 10, 10);
+    background-color:  #559F33;
     width: auto;
     height: auto;
     position: sticky;
@@ -67,14 +67,18 @@ p {
 
 
 .logo_mappin{
-width:13%;
+width:15%;
 height: auto;
 margin-top: 15px;
 }
 
+
 #mobile-demo {
     background-color: rgba(0, 0, 0, 0.753);
-    display: center;
+}
+
+.sidenav-trigger {
+    float: right !important;
 }
 
 .namecat {
@@ -84,9 +88,10 @@ margin-top: 15px;
 }
 
 #bt {
-    background-color: green;
+    background-color: #559F33;
     border-radius: 3px;
     align-items: center;
+    color: white;
 }
 
 #bt:hover {

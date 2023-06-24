@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
   
 
 <!-- NAV -->
@@ -159,11 +162,12 @@
   </HEAD>
 <BODY>
 
-
+  <a href="https://wa.me/qr/LLYTQXLOVC6FL1" id="menu" class="waves-effect waves-light btn btn-floating" ></a>
+  
 
   <div class="wellcome">
 
-    <div class="section green">
+    <div class="section">
       <div class="row container">
         <h2 class="header">Bem-vindo à nova era da Mappin!</h2>
         <p class="grey-text text-darken-3 lighten-3">Prepare-se para mergulhar em um universo incrível, repleto de estilo e modernidade. Nossa marca renasceu com uma proposta irresistível: unir a paixão pelo esporte com o conforto e o charme das roupas casuais contemporâneas.</p>
@@ -193,8 +197,6 @@
         </ul>
       </div>
     </div>
-
-
 
 <hr>
 
@@ -264,8 +266,17 @@ document.addEventListener('DOMContentLoaded', function() {
           });
 
 
+      document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.tap-target');
+          var instances = M.TapTarget.init(elems, options);
+          var options = onOpen
+          });
+
     </script>
-  
+
+
+
+
 
     <footer class="page-footer">
     <div class="container">
