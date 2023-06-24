@@ -1,10 +1,9 @@
 h2 {
-    background-color: rgba(0, 0, 0, 0.589);
     text-align: center;
     color: white !important;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border-radius: 3px;
     font-family: 'Caprasimo', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 p {
