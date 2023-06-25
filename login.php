@@ -1,26 +1,53 @@
 <?php
-$login = $_POST['login'];
-$senha = md5($_POST['senha']);
-$entrar = $_POST['entrar'];
+// Verifique se o formulário de login foi enviado
+if (isset($_POST['entrar'])) {
+    // Obtenha os valores do formulário
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
 
-$conexao = mysqli_connect("localhost", "root", "", "mappin");
+    // Estabeleça uma conexão com o banco de dados
+    $conn = new mysqli("localhost", "root", "", "mappin");
 
-if (!$conexao) {
-    die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
-}
-
-if (isset($entrar)) {
-    $verifica = mysqli_query($conexao, "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'") or die("Erro ao selecionar");
-
-    if (mysqli_num_rows($verifica) <= 0) {
-        echo "<script>alert('Login e/ou senha incorretos');window.location.href='login.html';</script>";
-        die();
-    } else {
-        setcookie("login", $login);
-        header("Location: login.html");
-        exit();
+    // Verifique se houve um erro na conexão
+    if ($conn->connect_error) {
+        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
     }
-}
 
-mysqli_close($conexao);
+    // Escape os valores para evitar injeção de SQL (opcional, mas recomendado)
+    $login = $conn->real_escape_string($login);
+    $senha = $conn->real_escape_string($senha);
+
+    // Crie uma consulta SQL para verificar as credenciais
+    $sql = "SELECT * FROM usuarios WHERE login = '$login'";
+
+    // Execute a consulta
+    $result = $conn->query($sql);
+
+    // Verifique se a consulta retornou algum resultado
+    if ($result->num_rows > 0) {
+        // Usuário encontrado, verifique a senha
+        $row = $result->fetch_assoc();
+        $storedPassword = $row['senha'];
+
+        // Use a função password_verify para comparar a senha digitada com a senha armazenada
+        if (password_verify($senha, $storedPassword)) {
+            // Senha correta, autentique o usuário
+            session_start();
+            $_SESSION['login'] = $login;
+
+            // Redirecione para a página de perfil ou dashboard
+            header("Location: Privado/index.php");
+            exit();
+        } else {
+            // Senha incorreta
+            echo "Senha incorreta";
+        }
+    } else {
+        // Usuário não encontrado
+        echo "Usuário não encontrado";
+    }
+
+    // Feche a conexão com o banco de dados
+    $conn->close();
+}
 ?>

@@ -1,7 +1,10 @@
+.body {
+    background-color: #B2F594;
+}
+
 h2 {
     text-align: center;
     color: white !important;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-family: 'Caprasimo', cursive;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -12,5 +15,10 @@ p {
 
 .section {
     background-color: #B2F594;
+}
+
+.bemvindo {
+    top: 1px;
+    text-align: center;
 }
 

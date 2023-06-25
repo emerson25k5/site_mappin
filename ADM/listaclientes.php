@@ -1,13 +1,29 @@
+<?php
+session_start();
+// Verifique se o usuário está autenticado
+if (isset($_SESSION['login'])) {
+  // Obtém o login do usuário autenticado
+  $login = $_SESSION['login'];
+
+  // Conecte-se ao banco de dados
+  $conexao = mysqli_connect("localhost", "root", "", "mappin");
+
+  // Consulta SQL para buscar os dados do usuário autenticado
+  $query = "SELECT nome, email, telefone, cpf, nascimento FROM clientes WHERE email = '$login'";
+  $result = mysqli_query($conexao, $query);
+}
+?>
 <!DOCTYPE html>
 <HTML lang="pt-BR">
   <HEAD>
-    <TITLE>Mappin | Esportes</TITLE>
+    <TITLE>Mappin | Home</TITLE>
 
   <meta charset="UTF-8">
   <meta name="description" content="Site de vendas digital">
   <meta name="keywords" content="HTML, CSS, JavaScript">
   <link rel="stylesheet" type="text/css" href="../nav.css">
-  <link rel="stylesheet" type="text/css" href="catEstilo.css">
+  <link rel="stylesheet" type="text/css" href="../estiloindex.css">
+  <link rel="stylesheet" type="text/css" href="../Categorias/catEstilo.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -26,15 +42,17 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="botao_menu">
-          <li><a href="../cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
-          <li><a href="../login.php" ><i class="material-icons" style="font-size: 200%;">person</i></a></li>
           <li><a href="#" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">account_circle</i></a></li>
+          <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
         </ul>
 
-        <a href="../index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+        <a href="index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+          
+        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
 
         <ul class="categorias hide-on-med-and-down">
-          <li><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
+          <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
           <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
           <li><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
           <li><a class="dropdown-trigger" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
@@ -49,7 +67,7 @@
   <br>
   <hr style="background-color: white;">
   <br>
-  <li><a class="dropdown-trigger" id="bt" data-target="menususpenso11"><i class="material-icons" style="font-size: 200%;">star</i>Novidades</a></li>
+  <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" id="bt" data-target="menususpenso11"><i class="material-icons" style="font-size: 200%;">star</i>Novidades</a></li>
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso22"><i class="material-icons" style="font-size: 200%;">female</i>Feminino</a></li>
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso33"><i class="material-icons" style="font-size: 200%;">male</i>Masculino</a></li>
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso44"><i class="material-icons" style="font-size: 200%;">child_care</i>Infantil</a></li>    <!--Botões de Categorias-->
@@ -64,7 +82,7 @@
                     <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
                     <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
                     <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
+                    <li class="back_list"><a href="Categorias/catNovidades.html">Novidades</a></li>       
                   </ul>
 
                   <ul id="menususpenso2" class="dropdown-content">
@@ -154,7 +172,10 @@
 
                   document.addEventListener('DOMContentLoaded', function() {
                       var elems = document.querySelectorAll('.sidenav');
-                      var instances = M.Sidenav.init(elems);
+                      var instances = M.Sidenav.init(elems, options);
+                      var options = {
+                        edge: 'right'
+                      }
                     });
                   </script>
 
@@ -163,184 +184,33 @@
 <BODY>
 
   <a href="https://wa.me/qr/LLYTQXLOVC6FL1" id="menu" class="waves-effect waves-light btn btn-floating pulse" ></a>
-
-
-  <div class="cards">
-
-    <H1>Novidades</H1>
-
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?car" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-          <b>R$599,00</b>
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
   
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?ball" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-            <b>R$599,00</b>
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?basket" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-            R$599,00
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
+  <div class="tabela container">
+  <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
+              <th>CPF</th>
+              <th>Nacimento</th>
+          </tr>
+        </thead>
 
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?house" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-            R$599,00
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?car" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-            R$599,00
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?car" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-            R$599,00
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?car" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-            R$599,00
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card__image-holder">
-        <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?car" alt="wave"></a>
-      </div>
-      <div class="card_titulo">
-        <h5>
-            R$599,00
-        </h5>
-      </div>
-      <div>
-        <div class="card-descricao">
-          Este é um exemplo de descrição do produto dentro do card.
-        </div>
-        <ul class="botao_card">
-          <li class="add_chart btn"><a href="#" class="chart"><i class="material-icons" style="font-size: 200%;">add_shopping_cart</i></a></li>
-          <li class="favorito btn"><a href="#" class="favorite"><i class="material-icons" style="font-size: 200%;">favorite_border</i></a></li>
-      </ul>
-        <div class="informacoes"><a href="#"><i class="material-icons" style="font-size: 200%;">expand_more</i></a></div>
-      </div>
-    </div>
-
-
-  
+        <tbody>
+          <?php while ($row = mysqli_fetch_assoc($result)): ?>
+          <tr>
+            <td><?php echo $row['nome']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['telefone']; ?></td>
+            <td><?php echo $row['cpf']; ?></td>
+            <td><?php echo $row['nascimento']; ?></td>
+          </tr>
+          <?php endwhile; ?>
+        </tbody>
+      </table>
   </div>
-
     <footer class="page-footer">
     <div class="container">
       <div class="row">

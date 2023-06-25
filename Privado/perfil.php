@@ -1,3 +1,21 @@
+<?php
+session_start();
+// Verifique se o usuário está autenticado
+if (isset($_SESSION['login'])) {
+  // Obtém o login do usuário autenticado
+  $login = $_SESSION['login'];
+
+  // Conecte-se ao banco de dados
+  $conexao = mysqli_connect("localhost", "root", "", "mappin");
+
+  // Consulta SQL para buscar os dados do usuário autenticado
+  $query = "SELECT nome, telefone, email, cpf, nascimento, data_cadastro FROM clientes WHERE login = ?";
+  $stmt = mysqli_prepare($conexao, $query);
+  mysqli_stmt_bind_param($stmt, "s", $login);
+  mysqli_stmt_execute($stmt);
+  $result = mysqli_stmt_get_result($stmt);
+}
+?>
 <!DOCTYPE html>
 <HTML lang="pt-BR">
   <HEAD>
@@ -6,8 +24,9 @@
   <meta charset="UTF-8">
   <meta name="description" content="Site de vendas digital">
   <meta name="keywords" content="HTML, CSS, JavaScript">
-  <link rel="stylesheet" type="text/css" href="nav.css">
-  <link rel="stylesheet" type="text/css" href="estiloindex.css">
+  <link rel="stylesheet" type="text/css" href="../nav.css">
+  <link rel="stylesheet" type="text/css" href="../estiloindex.css">
+  <link rel="stylesheet" type="text/css" href="../Categorias/catEstilo.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -26,15 +45,17 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="botao_menu">
-          <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
-          <li><a href="login.html" ><i class="material-icons" style="font-size: 200%;">person</i></a></li>
           <li><a href="#" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">account_circle</i></a></li>
+          <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
         </ul>
 
-        <a href="index.html"><img src="Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+        <a href="index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+          
+        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
 
         <ul class="categorias hide-on-med-and-down">
-          <li><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
+          <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
           <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
           <li><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
           <li><a class="dropdown-trigger" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
@@ -154,7 +175,10 @@
 
                   document.addEventListener('DOMContentLoaded', function() {
                       var elems = document.querySelectorAll('.sidenav');
-                      var instances = M.Sidenav.init(elems);
+                      var instances = M.Sidenav.init(elems, options);
+                      var options = {
+                        edge: 'right'
+                      }
                     });
                   </script>
 
@@ -162,153 +186,40 @@
   </HEAD>
 <BODY>
 
-  <a href="https://wa.me/qr/LLYTQXLOVC6FL1" id="menu" class="waves-effect waves-light btn btn-floating" ></a>
+  <a href="https://wa.me/qr/LLYTQXLOVC6FL1" id="menu" class="waves-effect waves-light btn btn-floating pulse" ></a>
   
 
-  <div class="wellcome">
+  <div class="tabela container">
+  <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
+              <th>CPF</th>
+              <th>Nacimento</th>
+              <th>Data cadastro</th>
+          </tr>
+        </thead>
 
-    <div class="section hide-on-med-and-down">
-      <div class="row container">
-        <h2 class="header">Bem-vindo à nova era da Mappin!</h2>
-        <p class="grey-text text-darken-3 lighten-3">Prepare-se para mergulhar em um universo incrível, repleto de estilo e modernidade.</p>
-      </div>
-      <div class="row container">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header"><i class="material-icons">home</i>Tudo para o seu lar!</div>
-            <div class="collapsible-body" ><a href="#">Móveis</a></div>
-            <div class="collapsible-body" ><a href="#">Decoração</a></div>
-            <div class="collapsible-body" ><a href="#">Utensílios domésticos</a></div>
-            <div class="collapsible-body" ><a href="#">Eletrodomésticos</a></div>
-            <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
-          </li>
-          <li>
-            <div class="collapsible-header"><i class="material-icons">wc</i>Quer ficar por dentro da moda?</div>
-            <div class="collapsible-body" ><a href="#">Roupas femininas</a></div>
-            <div class="collapsible-body" ><a href="#">Roupas masculinas</a></div>
-            <div class="collapsible-body" ><a href="#">Acessórios</a></div>
-            <div class="collapsible-body" ><a href="#">Calçados</a></div>
-            <div class="collapsible-body" ><a href="#">Moda infantil</a></div>
-          </li>
-          <li>
-            <div class="collapsible-header"><i class="material-icons">directions_bike</i>Qual o seu esporte favorito?</div>
-            <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section hide-on-med-and-up">
-      <div class="row container">
-        <h2 class="header">Bem-vindo à nova era da</h2>
-        <h2 class="header" style="font-size: 600%;">Mappin</h2>
-        <p class="grey-text text-darken-3 lighten-3">Prepare-se para mergulhar em um universo incrível, repleto de estilo e modernidade.</p>
-      </div>
-      <div class="row container">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header"><i class="material-icons">home</i>Tudo para o seu lar!</div>
-            <div class="collapsible-body" ><a href="#">Móveis</a></div>
-            <div class="collapsible-body" ><a href="#">Decoração</a></div>
-            <div class="collapsible-body" ><a href="#">Utensílios domésticos</a></div>
-            <div class="collapsible-body" ><a href="#">Eletrodomésticos</a></div>
-            <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
-          </li>
-          <li>
-            <div class="collapsible-header"><i class="material-icons">wc</i>Quer ficar por dentro da moda?</div>
-            <div class="collapsible-body" ><a href="#">Roupas femininas</a></div>
-            <div class="collapsible-body" ><a href="#">Roupas masculinas</a></div>
-            <div class="collapsible-body" ><a href="#">Acessórios</a></div>
-            <div class="collapsible-body" ><a href="#">Calçados</a></div>
-            <div class="collapsible-body" ><a href="#">Moda infantil</a></div>
-          </li>
-          <li>
-            <div class="collapsible-header"><i class="material-icons">directions_bike</i>Qual o seu esporte favorito?</div>
-            <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-<hr>
-
-    <div class="slider">
-      <ul class="slides">
-        <li>
-          <img src="Imagens/camamesabanho1.jpg">
-          <div class="caption center-align">
-            <h3>Sua lar moderno e elegante</h3>
-            <h5 class="light grey-text text-lighten-3">Deixa com a gente!</h5>
-          </div>
-        </li>
-        <li>
-          <img src="Imagens/camamesabanhosofa.jpg">
-          <div class="caption left-align">
-            <h3>Sofas para família</h3>
-            <h5 class="light grey-text text-lighten-3">Seus momentos, pedem o conforto que a Mappin tem!</h5>
-          </div>
-        </li>
-        <li>
-          <img src="Imagens/ciclismo1.jpg">
-          <div class="caption right-align">
-            <h3>Ciclismo</h3>
-            <h5 class="light grey-text text-lighten-3">Tudo para o seu esporte favorito!</h5>
-          </div>
-        </li>
-        <li>
-          <img src="Imagens/proteínas.jpg">
-          <div class="caption center-align">
-            <h3>Nutrição, na Mappin você encontra!</h3>
-            <h5 class="light grey-text text-lighten-3">Proteínas, pré-treinos e suplementação em geral!</h5>
-          </div>
-        </li>
-        <li>
-          <img src="Imagens/modafeminina.jpg">
-          <div class="caption center-align">
-            <h3 style="color:black">Nutrição, na Mappin você encontra!</h3>
-            <h5 class="light grey-text text-lighten-3" style="color:black">Proteínas, pré-treinos e suplementação em geral!</h5>
-          </div>
-        </li>
-      </ul>
-    </div>
-            
+        <tbody>
+          <?php while ($row = mysqli_fetch_assoc($result)): ?>
+          <tr>
+            <td><?php echo $row['nome']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['telefone']; ?></td>
+            <td><?php echo $row['cpf']; ?></td>
+            <td><?php echo $row['nascimento']; ?></td>
+            <td><?php echo $row['data_cadastro']; ?></td>
+          </tr>
+          <?php endwhile; ?>
+        </tbody>
+      </table>
   </div>
-  
 
-    <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.slider');
-    var instances = M.Slider.init(elems, options);
-    var options = {
-      indicators: false
-    }
-  });
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.parallax');
-        var instances = M.Parallax.init(elems, options);
-        var options = {
-          responsiveThreshold: 0
-        }
-        });
-      document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.collapsible');   
-          var instances = M.Collapsible.init(elems);
-          });
-
-
-      document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.tap-target');
-          var instances = M.TapTarget.init(elems, options);
-          var options = onOpen
-          });
-
-    </script>
-
-
-
-
+<div>
+  <li class="btn"><a href="atualiza_senha.php"><i class="material-icons">key</i>Alterar senha</a></li>
+</div>
 
     <footer class="page-footer">
     <div class="container">

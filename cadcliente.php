@@ -8,6 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpf = $_POST["cpf"];
     $nascimento = $_POST["nascimento"];
     $login = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
     // Conexão com o banco de dados
     $conexao = mysqli_connect("localhost", "root", "", "mappin");
@@ -17,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Inserção na tabela clientes
-    $sqlClientes = "INSERT INTO clientes (nome, email, telefone, cpf, nascimento) VALUES ('$nome','$email','$telefone','$cpf','$nascimento')";
+    $sqlClientes = "INSERT INTO clientes (nome, login, email, telefone, cpf, nascimento) VALUES ('$nome','$email','$email','$telefone','$cpf','$nascimento')";
 
     if (mysqli_query($conexao, $sqlClientes)) {
         // Inserção na tabela usuarios
-        $sqlUsuarios = "INSERT INTO usuarios (cpf_usuario, login, senha) VALUES ('$cpf', '$login', '$cpf')";
+        $sqlUsuarios = "INSERT INTO usuarios (cpf_usuario, login, senha) VALUES ('$cpf', '$login', '$hashSenha')";
 
         if (mysqli_query($conexao, $sqlUsuarios)) {
-            header("Location: cadastropass.html");
+            header("Location: login.html");
             exit();
         } else {
             echo "Erro ao inserir o registro na tabela usuarios: " . mysqli_error($conexao);

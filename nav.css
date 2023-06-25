@@ -4,6 +4,7 @@
     height: auto;
     position: sticky;
     display: flex;
+    z-index: 100;
 }
 
 p {
@@ -53,6 +54,7 @@ p {
     background-color: rgb(255, 255, 255) !important;
     color: white !important;
     text-align: center;
+    z-index: 2;
 }
 
 .back_list { /*lista suspensa*/

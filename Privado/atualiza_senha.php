@@ -1,13 +1,24 @@
+<?php
+// Inicie a sessão no início do arquivo
+session_start();
+
+// Verifique se o usuário está autenticado
+if (!isset($_SESSION['login'])) {
+    // O usuário não está autenticado, redirecione-o para a página de login
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <HTML lang="pt-BR">
   <HEAD>
-    <TITLE>Mappin | Cadastro</TITLE>
+    <TITLE>Mappin | Atualização de senha</TITLE>
 
     <meta charset="UTF-8">
     <meta name="description" content="Site de vendas digital">
     <meta name="keywords" content="HTML, CSS, JavaScript">
-    <link rel="stylesheet" type="text/css" href="nav.css">
-    <link rel="stylesheet" type="text/css" href="estilocadastrocliente.css">
+    <link rel="stylesheet" type="text/css" href="../nav.css">
+    <link rel="stylesheet" type="text/css" href="../estilocadastrocliente.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -25,10 +36,12 @@
           <ul class="botao_menu">
             <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
             <li><a href="carrinho.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+            <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
           </ul>
   
-          <a href="index.html"><img src="Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
-  
+          <a href="../index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+          <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
+          
           <ul class="categorias hide-on-med-and-down">
             <li><a class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
             <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
@@ -159,7 +172,7 @@
  <BODY>
 
 <div style="text-align: center">
-  <h1>Crie uma senha</h1>
+  <h1>Crie uma nova senha</h1>
 </div>
 
 
@@ -167,7 +180,7 @@
     <form class="col s12" action="cadpass.php" method="POST" name="pass">
 
       <div class="input-field col s12">
-        <input id="ao_cpf" type="text" name="cpf"  maxlength="14"  oninput="ValidaCPF()" class="validate" required>
+        <input id="cpf" type="text" name="cpf"  maxlength="14"  oninput="ValidaCPF()" class="validate" required>
         <label for="cpf" maxlength="14" style="color:black;">CPF</label>
       </div>
 
@@ -185,21 +198,21 @@
 
       <script>
 
-        function ValidaCPF() {
-        var ao_cpf = document.forms.cadastro.ao_cpf.value;
-        var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;
-        if (cpfValido.test(ao_cpf) == false) {
-          ao_cpf = ao_cpf.replace(/\D/g, ""); // Remove tudo o que não é dígito
-          if (ao_cpf.length == 11) {
-            ao_cpf = ao_cpf.replace(/(\d{3})(\d)/, "$1.$2");
-            ao_cpf = ao_cpf.replace(/(\d{3})(\d)/, "$1.$2");
-            ao_cpf = ao_cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-            document.getElementById("ao_cpf").value = ao_cpf;
-          } else {
-            console.log("CPF inválido");
-          }
-        }
-      }
+function ValidaCPF() {
+  var cpf = document.getElementById("cpf").value;
+  var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;
+  if (cpfValido.test(cpf) == false) {
+    cpf = cpf.replace(/\D/g, ""); 
+    if (cpf.length == 11) {
+      cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2"); 
+      cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2"); 
+      cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); 
+      document.getElementById("cpf").value = cpf;
+    } else {
+      console.log("CPF inválido");
+    }
+  }
+}
       </script>
 
     </form>

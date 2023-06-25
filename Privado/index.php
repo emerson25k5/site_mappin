@@ -1,3 +1,14 @@
+<?php
+// Inicie a sessão no início do arquivo
+session_start();
+
+// Verifique se o usuário está autenticado
+if (!isset($_SESSION['login'])) {
+    // O usuário não está autenticado, redirecione-o para a página de login
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <HTML lang="pt-BR">
   <HEAD>
@@ -6,9 +17,9 @@
   <meta charset="UTF-8">
   <meta name="description" content="Site de vendas digital">
   <meta name="keywords" content="HTML, CSS, JavaScript">
-  <link rel="stylesheet" type="text/css" href="nav.css">
-  <link rel="stylesheet" type="text/css" href="estiloindex.css">
-  <link rel="stylesheet" type="text/css" href="Categorias/catEstilo.css">
+  <link rel="stylesheet" type="text/css" href="../nav.css">
+  <link rel="stylesheet" type="text/css" href="../estiloindex.css">
+  <link rel="stylesheet" type="text/css" href="../Categorias/catEstilo.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -27,12 +38,14 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="botao_menu">
-          <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
-          <li><a href="login.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
-          <li><a href="login.html" ><i class="material-icons" style="font-size: 200%;">login</i></a></li>
+          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+          <li><a href="perfil.php" ><i class="material-icons" style="font-size: 200%;">account_circle</i></a></li>
+          <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
         </ul>
 
-        <a href="index.php"><img src="Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+        <a href="index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+          
+        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
 
         <ul class="categorias hide-on-med-and-down">
           <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
@@ -55,6 +68,12 @@
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso33"><i class="material-icons" style="font-size: 200%;">male</i>Masculino</a></li>
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso44"><i class="material-icons" style="font-size: 200%;">child_care</i>Infantil</a></li>    <!--Botões de Categorias-->
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso55"><i class="material-icons" style="font-size: 200%;">sports_tennis</i>Acessórios</a></li>
+<br><br><br><br><br><br>
+  <div style="font-size: 20px;">
+    <a>Bem-vindo, <br><?php echo $_SESSION['login']; ?>!</a>
+    <a href="#" class="btn">Acessar perfil</a>
+    <a href="#" class="btn">logout</a>
+  </div>
 </ul>
 
 
@@ -202,7 +221,7 @@
       </div>
     </div>
 
-    <div class="section hide-on-med-and-up container">
+    <div class="section hide-on-med-and-up">
       <div class="row container">
         <h2 class="header">Bem-vindo à nova era da</h2>
         <h2 class="header" style="font-size: 600%;">Mappin</h2>
@@ -237,35 +256,35 @@
     <div class="slider">
       <ul class="slides">
         <li>
-          <img src="Imagens/camamesabanho1.jpg">
+          <img src="../Imagens/camamesabanho1.jpg">
           <div class="caption">
             <h3>Sua lar moderno e elegante</h3>
             <h5 class="light grey-text text-lighten-3">Deixa com a gente!</h5>
           </div>
         </li>
         <li>
-          <img src="Imagens/camamesabanhosofa.jpg">
+          <img src="../Imagens/camamesabanhosofa.jpg">
           <div class="caption left-align">
             <h3>Sofas para família</h3>
             <h5 class="light grey-text text-lighten-3">Seus momentos, pedem o conforto que a Mappin tem!</h5>
           </div>
         </li>
         <li>
-          <img src="Imagens/ciclismo1.jpg">
+          <img src="../Imagens/ciclismo1.jpg">
           <div class="caption right-align">
             <h3>Ciclismo</h3>
             <h5 class="light grey-text text-lighten-3">Tudo para o seu esporte favorito!</h5>
           </div>
         </li>
         <li>
-          <img src="Imagens/proteínas.jpg">
+          <img src="../Imagens/proteínas.jpg">
           <div class="caption center-align">
             <h3>Nutrição, na Mappin você encontra!</h3>
             <h5 class="light grey-text text-lighten-3">Proteínas, pré-treinos e suplementação em geral!</h5>
           </div>
         </li>
         <li>
-          <img src="Imagens/modafeminina.jpg">
+          <img src="../Imagens/modafeminina.jpg">
           <div class="caption center-align">
             <h3 style="color:black">Nutrição, na Mappin você encontra!</h3>
             <h5 class="light grey-text text-lighten-3" style="color:black">Proteínas, pré-treinos e suplementação em geral!</h5>
