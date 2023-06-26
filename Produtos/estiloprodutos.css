@@ -1,0 +1,31 @@
+.materialboxed {
+    display: block;
+    margin: 0 auto;
+  }
+
+h2 {
+   font-size: 200% !important;
+        
+}
+
+.produto {
+    background-color: #b3f59481;
+    border-radius: 5%;
+}
+
+header {
+    font-size: 150%;
+}
+
+p {
+    font-size: 100%;
+}
+
+.valor {
+    font-size: 200%;
+    text-align: left;
+}
+
+.caracteristicas {
+    text-align: left;
+}
