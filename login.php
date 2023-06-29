@@ -5,9 +5,15 @@ if (isset($_POST['entrar'])) {
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
+<<<<<<< HEAD
 
     $conn = new mysqli("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
 
+=======
+
+    $conn = new mysqli("localhost", "root", "", "mappin");
+
+>>>>>>> ad08e05bafa18a040d312e48e6c636a014cca6ee
 
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
