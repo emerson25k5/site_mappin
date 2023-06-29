@@ -1,23 +1,18 @@
 <?php
-
 if (isset($_POST['entrar'])) {
-
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-
     $conn = new mysqli("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
-
 
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
     }
 
-
     $login = $conn->real_escape_string($login);
     $senha = $conn->real_escape_string($senha);
 
-    $sql = "SELECT * FROM usuarios WHERE login = '$login'";
+    $sql = "SELECT * FROM admins WHERE login = '$login'";
 
     $result = $conn->query($sql);
 
@@ -29,15 +24,15 @@ if (isset($_POST['entrar'])) {
             session_start();
             $_SESSION['login'] = $login;
 
-            header("Location: Privado/index.php");
+            header("Location: listaclientes.php");
             exit();
         } else {
             echo "<script>alert('Senha incorreta.');</script>";
-            header("Location: login.html");
+            header("Location: loginadm.html");
         }
     } else {
         echo "<script>alert('O usuário informado não está cadastrado. Você será direcionado para a tela de cadastro.');</script>";
-        echo "<script>setTimeout(function(){ window.location.href = 'cadastrocliente.html'; }, 200);</script>";
+        echo "<script>setTimeout(function(){ window.location.href = 'loginadm.html'; }, 200);</script>";
     }
 
     $conn->close();

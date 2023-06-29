@@ -1,28 +1,14 @@
-<?php
-session_start();
-if (isset($_SESSION['login'])) {
-  $login = $_SESSION['login'];
-
-  $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
-
-  $query = "SELECT nome, telefone, email, cpf, nascimento, data_cadastro FROM clientes WHERE login = ?";
-  $stmt = mysqli_prepare($conexao, $query);
-  mysqli_stmt_bind_param($stmt, "s", $login);
-  mysqli_stmt_execute($stmt);
-  $result = mysqli_stmt_get_result($stmt);
-}
-?>
 <!DOCTYPE html>
 <HTML lang="pt-BR">
   <HEAD>
-    <TITLE>Mappin | Home</TITLE>
+    <TITLE>Mappin | Land1</TITLE>
 
   <meta charset="UTF-8">
   <meta name="description" content="Site de vendas digital">
   <meta name="keywords" content="HTML, CSS, JavaScript">
   <link rel="stylesheet" type="text/css" href="../nav.css">
-  <link rel="stylesheet" type="text/css" href="../estiloindex.css">
   <link rel="stylesheet" type="text/css" href="../Categorias/catEstilo.css">
+  <link rel="stylesheet" type="text/css" href="estiloprodutos.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -41,14 +27,13 @@ if (isset($_SESSION['login'])) {
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="botao_menu">
-          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
-          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">account_circle</i></a></li>
-          <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
+          <li><a href="../index.php" ><i class="material-icons" style="font-size: 200%;">store</i></a></li>
+          <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
+          <li><a href="../login.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+          <li><a href="../login.html" ><i class="material-icons" style="font-size: 200%;">login</i></a></li>
         </ul>
 
-        <a href="index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
-          
-        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
+        <a href="../index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
 
         <ul class="categorias hide-on-med-and-down">
           <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
@@ -184,38 +169,61 @@ if (isset($_SESSION['login'])) {
 
   <a href="https://wa.me/qr/LLYTQXLOVC6FL1" id="menu" class="waves-effect waves-light btn btn-floating pulse" ></a>
   
+      
+      
+<br>
+    <div class="produto center container">
+      <br>
+      <div>
+      <a class="center"><img class="responsive-img materialboxed " src="prodImagens/raqueteTenis.png" alt="RaqueteTenis"></a>
+      </div>
 
-  <div class="tabela container">
-  <table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>E-mail</th>
-              <th>Telefone</th>
-              <th>CPF</th>
-              <th>Nacimento</th>
-              <th>Data cadastro</th>
-          </tr>
-        </thead>
+      <div class="nome_produto">
+        <h2 >02 Raquetes De Tênis Alumínio Iniciante Bola E Bolsa</h2>
+      <div class="divider center"></div>
+        <p class="valor container">R$ 78,99</p>
+      </div>
+      <div>
+        <p>Com esse prático Kit de tênis você vai treinar com mais qualidade e precisão melhorando sua performance.</p>
+        
+        
+        <div>
+          <button class="btn">Adicionar ao Carrinho</button>
+        </div>
 
-        <tbody>
-          <?php while ($row = mysqli_fetch_assoc($result)): ?>
-          <tr>
-            <td><?php echo $row['nome']; ?></td>
-            <td><?php echo $row['email']; ?></td>
-            <td><?php echo $row['telefone']; ?></td>
-            <td><?php echo $row['cpf']; ?></td>
-            <td><?php echo $row['nascimento']; ?></td>
-            <td><?php echo $row['data_cadastro']; ?></td>
-          </tr>
-          <?php endwhile; ?>
-        </tbody>
-      </table>
-  </div>
+        <br>
 
-<div class="container">
-  <li class="btn center black"><a href="atualiza_senha.php"><i class="material-icons">key</i>Alterar senha</a></li>
-</div>
+      <div class="caracteristicas container">
+        <header>Características:</header>
+        <p>
+          As raquetes têm excelente acabamento e durabilidade.<br>
+          Marca: Red Star<br>
+          -Composição: Ferro, Nylon e Borracha.<br>
+          -Cores: Vermelho e Azul.<br>
+          -Peso Raquete de Tênis: 215g.<br>
+          -Fios de Nylon de excepcional resistência e durabilidade<br>
+          -Moldura em aço carbono.<br>
+          -Cabo emborrachado, desenvolvido para a sua segurança e total conforto.<br>
+        </p>
+      </div>
+      </div>
+      <br>
+    </div>
+      <br><br><br><br>
+    <h2 class="left container">Produtos relacionados:</h2>
+
+
+    </div><br><br><br><br><br>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems);
+  });
+    </script>
+    
+
 
     <footer class="page-footer">
     <div class="container">
@@ -244,3 +252,4 @@ if (isset($_SESSION['login'])) {
     </footer>
 
 </BODY>
+

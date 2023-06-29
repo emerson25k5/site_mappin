@@ -1,12 +1,57 @@
 <?php
-// Inicie a sessão no início do arquivo
 session_start();
 
-// Verifique se o usuário está autenticado
-if (!isset($_SESSION['login'])) {
-    // O usuário não está autenticado, redirecione-o para a página de login
-    header("Location: login.php");
-    exit();
+if (isset($_SESSION['login'])) {
+  $login = $_SESSION['login'];
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $senhaAntiga = $_POST['senha_antiga'];
+    $senhaNova = $_POST['senha_nova'];
+    $confirmarSenha = $_POST['confirmar_senha'];
+
+    $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
+
+    if ($conexao) {
+      $query = "SELECT senha FROM usuarios WHERE login = '$login'";
+      $resultado = mysqli_query($conexao, $query);
+
+      if ($resultado) {
+        if (mysqli_num_rows($resultado) === 1) {
+          $row = mysqli_fetch_assoc($resultado);
+          $senhaAtual = $row['senha'];
+
+          if (password_verify($senhaAntiga, $senhaAtual)) {
+            if ($senhaNova === $confirmarSenha) {
+              $senhaHash = password_hash($senhaNova, PASSWORD_DEFAULT);
+
+              $query = "UPDATE usuarios SET senha = '$senhaHash' WHERE login = '$login'";
+              $resultado = mysqli_query($conexao, $query);
+
+              if ($resultado) {
+                echo "<script>alert('Senha alterada com sucesso!');</script>";
+                echo "<script>setTimeout(function(){ window.location.href = 'perfil.php'; }, 100);</script>";
+              } else {
+                echo "<script>alert('Erro ao atualizar a senha.');</script>";
+              }
+            } else {
+              echo "<script>alert('As senhas não coincidem.');</script>";
+            }
+          } else {
+            echo "<script>alert('A senha antiga fornecida é inválida.');</script>";
+          }
+        } else {
+          echo "<script>alert('Usuário não encontrado.');</script>";
+        }
+      } else {
+        echo "<script>alert('Erro ao consultar o banco de dados.');</script>";
+      }
+
+ 
+      mysqli_close($conexao);
+    } else {
+      echo "<script>alert('Erro ao conectar ao banco de dados.');</script>";
+    }
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -177,21 +222,21 @@ if (!isset($_SESSION['login'])) {
 
 
 <div class="box container">
-    <form class="col s12" action="cadpass.php" method="POST" name="pass">
+    <form class="col s12" action="" method="POST">
 
       <div class="input-field col s12">
-        <input id="cpf" type="text" name="cpf"  maxlength="14"  oninput="ValidaCPF()" class="validate" required>
-        <label for="cpf" maxlength="14" style="color:black;">CPF</label>
+        <input id="senha_antiga" type="password" name="senha_antiga"  maxlength="15" class="validate" required>
+        <label for="senha_antiga" maxlength="15" style="color:black;">Senha atual</label>
       </div>
 
       <div class="input-field col s12">
-        <input id="pass" type="password" name="pass" class="validate" maxlength="15" required>
-        <label for="pass" maxlength="15" style="color:black;">Crie uma senha</label>
+        <input id="senha_nova" type="password" name="senha_nova" class="validate" maxlength="15" required>
+        <label for="senha_nova" maxlength="15" style="color:black;">Crie uma senha</label>
       </div>
 
       <div class="input-field col s12">
-        <input id="pass2" type="password" name="pass2" class="validate" maxlength="15" required>
-        <label for="pass2" maxlength="15" style="color:black;">Repita a senha</label>
+        <input id="confirmar_senha" type="password" name="confirmar_senha" class="validate" maxlength="15" required>
+        <label for="confirmar_senha" maxlength="15" style="color:black;">Repita a senha</label>
       </div>
 
       <input type="submit" value="Confirmar" id="submit">

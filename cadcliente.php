@@ -12,18 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
-    // Conexão com o banco de dados
-    $conexao = mysqli_connect("localhost", "root", "", "mappin");
+    $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
 
     if (!$conexao) {
         die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
     }
 
-    // Inserção na tabela clientes
     $sqlClientes = "INSERT INTO clientes (nome, login, email, telefone, cpf, nascimento) VALUES ('$nome','$email','$email','$telefone','$cpf','$nascimento')";
 
     if (mysqli_query($conexao, $sqlClientes)) {
-        // Inserção na tabela usuarios
         $sqlUsuarios = "INSERT INTO usuarios (cpf_usuario, login, senha) VALUES ('$cpf', '$login', '$hashSenha')";
 
         if (mysqli_query($conexao, $sqlUsuarios)) {

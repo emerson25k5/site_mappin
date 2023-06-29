@@ -1,5 +1,5 @@
 .navbar {
-    background-color:  #559F33;
+    background-color:  #1c201ac2;
     width: auto;
     height: auto;
     position: sticky;
@@ -45,24 +45,24 @@ p {
     height: auto;
 }
 
-.dropdown-trigger:hover { /*conteúdo do drop categorias hover*/
+.dropdown-trigger:hover {
     background-color: rgba(255, 255, 255, 0.61);
     color: rgb(0, 0, 0);
 }
 
-.dropdown-content { /*conteúdo do drop categorias*/
+.dropdown-content {
     background-color: rgb(255, 255, 255) !important;
     color: white !important;
     text-align: center;
     z-index: 2;
 }
 
-.back_list { /*lista suspensa*/
+.back_list {
     color: white !important;
     text-align: center !important;
 }
 
-.back_list:hover { /*lista suspensa hover*/
+.back_list:hover {
     background-color: rgb(255, 255, 255) !important;
     color: rgb(255, 255, 255) !important;
 }

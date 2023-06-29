@@ -1,10 +1,10 @@
 <?php
-// Inicie a sessão no início do arquivo
+
 session_start();
 
-// Verifique se o usuário está autenticado
+
 if (!isset($_SESSION['login'])) {
-    // O usuário não está autenticado, redirecione-o para a página de login
+
     header("Location: login.php");
     exit();
 }

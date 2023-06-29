@@ -1,16 +1,21 @@
 <?php
 session_start();
-// Verifique se o usuário está autenticado
+
 if (isset($_SESSION['login'])) {
-  // Obtém o login do usuário autenticado
   $login = $_SESSION['login'];
 
-  // Conecte-se ao banco de dados
-  $conexao = mysqli_connect("localhost", "root", "", "mappin");
+  $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
 
-  // Consulta SQL para buscar os dados do usuário autenticado
-  $query = "SELECT nome, email, telefone, cpf, nascimento FROM clientes WHERE email = '$login'";
+  if (!$conexao) {
+    die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
+  }
+
+  $query = "SELECT * FROM clientes";
   $result = mysqli_query($conexao, $query);
+
+  if (!$result) {
+    die("Erro na consulta: " . mysqli_error($conexao));
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -42,142 +47,22 @@ if (isset($_SESSION['login'])) {
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="botao_menu">
-          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
-          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">account_circle</i></a></li>
-          <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
+        <li><a href="#" ><i class="material-icons" style="font-size: 200%;">manage_accounts</i></a></li>
+        <li><a href="encerra_sessaoADM.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
         </ul>
 
-        <a href="index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+        <a href="../index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
           
         <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
-
-        <ul class="categorias hide-on-med-and-down">
-          <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
-          <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
-          <li><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
-          <li><a class="dropdown-trigger" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
-          <li><a class="dropdown-trigger" data-target="menususpenso5">Acessórios</a></li>
-        </ul>
       
   </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <H2 class="namecat">Categorias</H2>
+  <H2 class="namecat">Opções:</H2>
   <br>
-  <hr style="background-color: white;">
-  <br>
-  <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" id="bt" data-target="menususpenso11"><i class="material-icons" style="font-size: 200%;">star</i>Novidades</a></li>
-  <li><a class="dropdown-trigger" id="bt" data-target="menususpenso22"><i class="material-icons" style="font-size: 200%;">female</i>Feminino</a></li>
-  <li><a class="dropdown-trigger" id="bt" data-target="menususpenso33"><i class="material-icons" style="font-size: 200%;">male</i>Masculino</a></li>
-  <li><a class="dropdown-trigger" id="bt" data-target="menususpenso44"><i class="material-icons" style="font-size: 200%;">child_care</i>Infantil</a></li>    <!--Botões de Categorias-->
-  <li><a class="dropdown-trigger" id="bt" data-target="menususpenso55"><i class="material-icons" style="font-size: 200%;">sports_tennis</i>Acessórios</a></li>
 </ul>
 
-
-                              <!-- Lista drop -->
-
-                  <ul id="menususpenso1" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="Categorias/catNovidades.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso2" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso3" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso4" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso5" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Ciclismo</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Corrida</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Treinando em casa</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Futebol</a></li>
-                  </ul>
-
-
-                  <ul id="menususpenso11" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso22" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso33" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso44" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Calçados</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Camisetas</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Acessórios</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Promoções</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>       
-                  </ul>
-
-                  <ul id="menususpenso55" class="dropdown-content">
-                    <li class="back_list"><a href="primeiroitem.html">Novidades</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Ciclismo</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Corrida</a></li>
-                    <li class="back_list"><a href="primeiroitem.html">Treinando em casa</a></li> 
-                    <li class="back_list"><a href="primeiroitem.html">Futebol</a></li>
-                  </ul>
-
-
-                  <script>
-                  document.addEventListener('DOMContentLoaded', function() {
-                    var dropdowns = document.querySelectorAll('.dropdown-trigger');   //JS do Menu suspenso das cetegorias
-                    var options = {
-                        coverTrigger: false,
-                        openOnClick: true,
-                        outDuration: 100
-                    };
-                    M.Dropdown.init(dropdowns, options);
-                  });
-
-                  document.addEventListener('DOMContentLoaded', function() {
-                      var elems = document.querySelectorAll('.sidenav');
-                      var instances = M.Sidenav.init(elems, options);
-                      var options = {
-                        edge: 'right'
-                      }
-                    });
-                  </script>
 
 
   </HEAD>
@@ -187,30 +72,41 @@ if (isset($_SESSION['login'])) {
   
 
   <div class="tabela container">
-  <table>
+      <table>
         <thead>
           <tr>
-              <th>Name</th>
-              <th>E-mail</th>
-              <th>Telefone</th>
-              <th>CPF</th>
-              <th>Nacimento</th>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>CPF</th>
+            <th>Nacimento</th>
+            <th>Data do cadastro</th>
+            <th>Login</th>
           </tr>
         </thead>
-
         <tbody>
-          <?php while ($row = mysqli_fetch_assoc($result)): ?>
-          <tr>
-            <td><?php echo $row['nome']; ?></td>
-            <td><?php echo $row['email']; ?></td>
-            <td><?php echo $row['telefone']; ?></td>
-            <td><?php echo $row['cpf']; ?></td>
-            <td><?php echo $row['nascimento']; ?></td>
-          </tr>
-          <?php endwhile; ?>
+          <?php if ($result && mysqli_num_rows($result) > 0): ?>
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+              <tr>
+                <td><?php echo $row['nome']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['telefone']; ?></td>
+                <td><?php echo $row['cpf']; ?></td>
+                <td><?php echo $row['nascimento']; ?></td>
+                <td><?php echo $row['data_cadastro']; ?></td>
+                <td><?php echo $row['login']; ?></td>
+              </tr>
+            <?php endwhile; ?>
+          <?php else: ?>
+            <tr>
+              <td colspan="7">Nenhum resultado encontrado.</td>
+            </tr>
+          <?php endif; ?>
         </tbody>
       </table>
-  </div>
+    </div>
+
+
     <footer class="page-footer">
     <div class="container">
       <div class="row">
