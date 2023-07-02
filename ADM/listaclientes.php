@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['login'])) {
-  $login = $_SESSION['login'];
+
 
   $conexao = mysqli_connect("localhost", "root", "", "mappin");
 
@@ -48,12 +48,12 @@ if (isset($_SESSION['login'])) {
 
         <ul class="botao_menu">
         <li><a href="#" ><i class="material-icons" style="font-size: 200%;">manage_accounts</i></a></li>
-        <li><a href="encerra_sessaoADM.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
+        <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
         </ul>
 
         <a href="../index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
           
-        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
+        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?></a>
       
   </div>
 </nav>

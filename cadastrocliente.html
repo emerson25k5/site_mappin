@@ -152,6 +152,25 @@
                         var elems = document.querySelectorAll('.sidenav');
                         var instances = M.Sidenav.init(elems);
                       });
+
+                      
+                        function converterMaiusculas() {
+                          var campoNome = document.getElementById("nome");
+                          campoNome.value = campoNome.value.toUpperCase();
+                        }
+
+                        function checkPasswords() {
+                          var senha = document.getElementById("senha").value;
+                          var senha1 = document.getElementById("senha1").value;
+                          var passwordError = document.getElementById("passwordError");
+                          
+                          if (senha !== senha1) {
+                            passwordError.style.display = "block";
+                          } else {
+                            passwordError.style.display = "none";
+                          }
+                        }
+  
                     </script>
   
   
@@ -212,7 +231,7 @@ function ValidaCPF() {
                           </script>
 
                 <div class="input-field col s12">
-                  <input id="nome" type="text" name="nome" class="validate" maxlength="40" required>
+                  <input id="nome" type="text" name="nome" class="validate" maxlength="40" onblur="converterMaiusculas()" required>
                   <label for="nome" maxlength="30" style="color:black;">Nome completo</label>
                 </div>
             
@@ -242,13 +261,14 @@ function ValidaCPF() {
                 </div>
 
                 <div class="input-field col s12">
-                  <input id="senha" type="password" name="senha" class="validate" maxlength="15" required>
+                  <input id="senha" type="password" name="senha" class="validate" maxlength="15" required pattern=".{8,}" title="A senha deve ter pelo menos 8 caracteres."  oninput="checkPasswords()">
                   <label for="senha" maxlength="15" style="color:black;">Crie uma senha</label>
                 </div>
 
                 <div class="input-field col s12">
-                  <input id="senha1" type="password" name="senha1" class="validate" maxlength="15" required>
+                  <input id="senha1" type="password" name="senha1" class="validate" maxlength="15" required pattern=".{8,}" title="A senha deve ter pelo menos 8 caracteres."  oninput="checkPasswords()">
                   <label for="senha1" maxlength="15" style="color:black;">Repita a senha</label>
+                  <p id="passwordError" style="color: red; font-size: 15px; display: none;">As senhas não conferem.</p>
                 </div>
         
 

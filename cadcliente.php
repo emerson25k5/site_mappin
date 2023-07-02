@@ -18,18 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
     }
 
-    $sqlClientes = "INSERT INTO clientes (nome, login, email, telefone, cpf, nascimento) VALUES ('$nome','$email','$email','$telefone','$cpf','$nascimento')";
+    $sqlClientes = "INSERT INTO clientes (nome, email, telefone, cpf, nascimento, login, senha) VALUES ('$nome', '$email', '$telefone','$cpf','$nascimento', '$login', '$hashSenha')";
 
     if (mysqli_query($conexao, $sqlClientes)) {
-        $sqlUsuarios = "INSERT INTO usuarios (cpf_usuario, login, senha) VALUES ('$cpf', '$login', '$hashSenha')";
-
-        if (mysqli_query($conexao, $sqlUsuarios)) {
             header("Location: login.html");
             exit();
-        } else {
-            echo "Erro ao inserir o registro na tabela usuarios: " . mysqli_error($conexao);
-        }
-    } else {
+        }else {
         echo "Erro ao inserir o registro na tabela clientes: " . mysqli_error($conexao);
     }
 
