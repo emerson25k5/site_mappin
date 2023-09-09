@@ -12,7 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
+<<<<<<< HEAD
+    $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
+=======
     $conexao = mysqli_connect("localhost", "root", "", "mappin");
+>>>>>>> ad08e05bafa18a040d312e48e6c636a014cca6ee
 
     if (!$conexao) {
         die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());

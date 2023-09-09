@@ -3,7 +3,11 @@ session_start();
 if (isset($_SESSION['login'])) {
   $login = $_SESSION['login'];
 
+<<<<<<< HEAD
+  $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
+=======
   $conexao = mysqli_connect("localhost", "root", "", "mappin");
+>>>>>>> ad08e05bafa18a040d312e48e6c636a014cca6ee
 
   $query = "SELECT nome, telefone, email, cpf, nascimento, data_cadastro FROM clientes WHERE login = ?";
   $stmt = mysqli_prepare($conexao, $query);

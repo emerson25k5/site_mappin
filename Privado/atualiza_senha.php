@@ -9,7 +9,11 @@ if (isset($_SESSION['login'])) {
     $senhaNova = $_POST['senha_nova'];
     $confirmarSenha = $_POST['confirmar_senha'];
 
+<<<<<<< HEAD
+    $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
+=======
     $conexao = mysqli_connect("localhost", "root", "", "mappin");
+>>>>>>> ad08e05bafa18a040d312e48e6c636a014cca6ee
 
     if ($conexao) {
       $query = "SELECT senha FROM usuarios WHERE login = '$login'";
