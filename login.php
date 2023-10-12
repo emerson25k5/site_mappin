@@ -5,15 +5,7 @@ if (isset($_POST['entrar'])) {
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-<<<<<<< HEAD
-
-    $conn = new mysqli("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
-
-=======
-
     $conn = new mysqli("localhost", "root", "", "mappin");
-
->>>>>>> ad08e05bafa18a040d312e48e6c636a014cca6ee
 
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
@@ -26,6 +18,8 @@ if (isset($_POST['entrar'])) {
     $sql = "SELECT * FROM clientes WHERE login = '$login'";
 
     $result = $conn->query($sql);
+    $_SESSION[''] = $row['nivel'];
+    $_SESSION['nome'] = $row['nome'];
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
@@ -34,6 +28,8 @@ if (isset($_POST['entrar'])) {
         if ($row['nivel'] == 2) {
             session_start();
             $_SESSION['login'] = $login;
+            $_SESSION['nivel'] = $row['nivel'];
+            $_SESSION['nome'] = $row['nome'];
             header("Location: ADM/listaclientes.php");
             exit();
               
@@ -41,12 +37,13 @@ if (isset($_POST['entrar'])) {
                     if (password_verify($senha, $storedPassword)) {
                         session_start();
                         $_SESSION['login'] = $login;
-
+                        $_SESSION['nivel'] = $row['nivel'];
+                        $_SESSION['nome'] = $row['nome'];
                         header("Location: Privado/index.php");
                         exit();
                     } else {
                         echo "<script>alert('Senha incorreta.');</script>";
-                        echo "<script>setTimeout(function(){ window.location.href = 'cadastrocliente.html'; }, 200);</script>";
+                        echo "<script>setTimeout(function(){ window.location.href = 'login.html'; }, 5);</script>";
                     }
                 }
 

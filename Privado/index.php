@@ -38,15 +38,14 @@ if (!isset($_SESSION['login'])) {
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="botao_menu">
-          <li><a href="#" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+          <li><a href="../ADM/listaclientes.php" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
           <li><a href="perfil.php" ><i class="material-icons" style="font-size: 200%;">account_circle</i></a></li>
           <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
         </ul>
 
         <a href="index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
           
-        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
-
+        <div class="right"><a class="hide-on-med-and-down" href="perfil.php" >Olá, <?php echo $_SESSION['nome'];?></a></div>
         <ul class="categorias hide-on-med-and-down">
           <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
           <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
@@ -57,8 +56,11 @@ if (!isset($_SESSION['login'])) {
       
   </div>
 </nav>
-
+<div>
 <ul class="sidenav" id="mobile-demo">
+<div><a href="perfil.php" >Olá, <?php echo $_SESSION['nome'];?></a></div>
+<a href="#!" class="btn green">Acessar perfil</a>
+<a href="#" class="btn green">logout</a>
   <H2 class="namecat">Categorias</H2>
   <br>
   <hr style="background-color: white;">
@@ -68,15 +70,9 @@ if (!isset($_SESSION['login'])) {
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso33"><i class="material-icons" style="font-size: 200%;">male</i>Masculino</a></li>
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso44"><i class="material-icons" style="font-size: 200%;">child_care</i>Infantil</a></li>    <!--Botões de Categorias-->
   <li><a class="dropdown-trigger" id="bt" data-target="menususpenso55"><i class="material-icons" style="font-size: 200%;">sports_tennis</i>Acessórios</a></li>
-<br><br><br><br><br><br>
-  <div style="font-size: 20px;">
-    <a>Bem-vindo, <br><?php echo $_SESSION['login']; ?>!</a>
-    <a href="#" class="btn">Acessar perfil</a>
-    <a href="#" class="btn">logout</a>
-  </div>
+<br><br><br><br>
 </ul>
-
-
+</div>
                               <!-- Lista drop -->
 
                   <ul id="menususpenso1" class="dropdown-content">
@@ -500,7 +496,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 
-</div>
 </div>
 
     <footer class="page-footer">

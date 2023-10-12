@@ -3,11 +3,8 @@ session_start();
 if (isset($_SESSION['login'])) {
   $login = $_SESSION['login'];
 
-<<<<<<< HEAD
-  $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
-=======
   $conexao = mysqli_connect("localhost", "root", "", "mappin");
->>>>>>> ad08e05bafa18a040d312e48e6c636a014cca6ee
+
 
   $query = "SELECT nome, telefone, email, cpf, nascimento, data_cadastro FROM clientes WHERE login = ?";
   $stmt = mysqli_prepare($conexao, $query);
@@ -52,7 +49,7 @@ if (isset($_SESSION['login'])) {
 
         <a href="index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
           
-        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?>!</a>
+        <div class="right"><a class="hide-on-med-and-down" href="perfil.php" >Olá, <?php echo $_SESSION['nome']; ?></a></div>
 
         <ul class="categorias hide-on-med-and-down">
           <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
@@ -188,8 +185,8 @@ if (isset($_SESSION['login'])) {
 
   <a href="https://wa.me/qr/LLYTQXLOVC6FL1" id="menu" class="waves-effect waves-light btn btn-floating pulse" ></a>
   
-
-  <div class="tabela container">
+<fieldset>
+  <div class="responsive-table">
   <table>
         <thead>
           <tr>
@@ -216,6 +213,7 @@ if (isset($_SESSION['login'])) {
         </tbody>
       </table>
   </div>
+</fieldset>
 
 <div class="container">
   <li class="btn center black"><a href="atualiza_senha.php"><i class="material-icons">key</i>Alterar senha</a></li>

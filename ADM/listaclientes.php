@@ -1,27 +1,59 @@
-<?php
+<?php //conecta
+
+require_once('../conecta_mappin.php');
+
+?>
+
+<?php //delete
+
+if($_GET['deletar']){
+
+$meu_cpf = $_GET['deletar'];
+
+$delete = "DELETE FROM clientes WHERE cpf = '$meu_cpf'";
+
+}
+
+
+if($delete){
+$executa = $conexao->query($delete);
+}
+
+?>
+
+<?php //inicia sessão e lista todos os usuários
 session_start();
 
-if (isset($_SESSION['login'])) {
+if (!isset($_SESSION['login'])) {
 
+  header("Location: login.php");
+  exit();
+}
 
-<<<<<<< HEAD
-  $conexao = mysqli_connect("localhost", "id20834502_root", "9970@Ebds", "id20834502_mappin");
-=======
-  $conexao = mysqli_connect("localhost", "root", "", "mappin");
->>>>>>> ad08e05bafa18a040d312e48e6c636a014cca6ee
+if (isset($_SESSION['login']) && isset($_SESSION['nivel']) && isset($_SESSION['nome'])) {
+
+  $adm = 2;
 
   if (!$conexao) {
-    die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
+    die("Erro na conexão com o banco de dados: " . mysqli_connect_error()); 
   }
 
-  $query = "SELECT * FROM clientes";
+  $query = "SELECT * FROM clientes ORDER BY nome ASC";
   $result = mysqli_query($conexao, $query);
+
 
   if (!$result) {
     die("Erro na consulta: " . mysqli_error($conexao));
   }
+
+  if ($_SESSION['nivel'] < $adm){
+    echo "<script>alert('Acesso negado!');</script>";
+    echo "<script>setTimeout(function(){ window.location.href = '../Privado/index.php'; }, 5);</script>";
+  }
 }
+
 ?>
+
 <!DOCTYPE html>
 <HTML lang="pt-BR">
   <HEAD>
@@ -55,10 +87,9 @@ if (isset($_SESSION['login'])) {
         <li><a href="../encerra_sessao.php" ><i class="material-icons" style="font-size: 200%;">logout</i></a></li>
         </ul>
 
-        <a href="../index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
+        <a href="../Privado/index.php"><img src="../Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
           
-        <a class="hide-on-med-and-down red">Bem-vindo, <?php echo $_SESSION['login']; ?></a>
-      
+        <div class="right"><a class="hide-on-med-and-down" href="../Privado/perfil.php" >Olá, <?php echo $_SESSION['nome'];?></a></div>      
   </div>
 </nav>
 
@@ -76,7 +107,7 @@ if (isset($_SESSION['login'])) {
   
 
   <div class="tabela container">
-      <table>
+      <table class="responsive-table highlight">
         <thead>
           <tr>
             <th>Name</th>
@@ -86,6 +117,7 @@ if (isset($_SESSION['login'])) {
             <th>Nacimento</th>
             <th>Data do cadastro</th>
             <th>Login</th>
+            <th class="center-align">Opões</th>
           </tr>
         </thead>
         <tbody>
@@ -99,6 +131,8 @@ if (isset($_SESSION['login'])) {
                 <td><?php echo $row['nascimento']; ?></td>
                 <td><?php echo $row['data_cadastro']; ?></td>
                 <td><?php echo $row['login']; ?></td>
+                <td><?php echo '<a href="listaclientes?deletar='.$row['cpf'].'"><i class="material-icons" style="font-size: 200%;">delete</i></a>' ?></td>
+                <td><?php echo '<a href="edita.php"><i class="material-icons" style="font-size: 200%;">edit</i></a>' ?></td>
               </tr>
             <?php endwhile; ?>
           <?php else: ?>

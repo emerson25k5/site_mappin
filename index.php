@@ -1,3 +1,18 @@
+<?php 
+
+require_once('conecta_mappin.php');
+
+$query = "SELECT * FROM categorias";
+
+$result = $conexao->query($query);
+
+if ($result->num_rows > 0) {
+$row = $result->fetch_assoc();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <HTML lang="pt-BR">
   <HEAD>
@@ -27,21 +42,23 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="botao_menu">
-          <li><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
-          <li><a href="login.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
-          <li><a href="login.html" ><i class="material-icons" style="font-size: 200%;">login</i></a></li>
+          <li class="hoverable"><a href="cadastrocliente.html" ><i class="material-icons" style="font-size: 200%;">person_add</i></a></li>
+          <li class="hoverable"><a href="login.html" ><i class="material-icons" style="font-size: 200%;">shopping_cart</i></a></li>
+          <li class="hoverable"><a href="login.html" ><i class="material-icons" style="font-size: 200%;">login</i></a></li>
         </ul>
 
         <a href="index.php"><img src="Imagens/logomappin_branco.png" class="logo_mappin" alt="logo"></a>
 
+
+        
         <ul class="categorias hide-on-med-and-down">
-          <li><a href="Categorias/catNovidades.html" class="dropdown-trigger" data-target="menususpenso1">Novidades</a></li>
-          <li><a class="dropdown-trigger" data-target="menususpenso2">Feminino</a></li>
-          <li><a class="dropdown-trigger" data-target="menususpenso3">Masculino</a></li>
-          <li><a class="dropdown-trigger" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
-          <li><a class="dropdown-trigger" data-target="menususpenso5">Acessórios</a></li>
+          <li><a href="Categorias/catNovidades.html" class="dropdown-trigger hoverable" data-target="menususpenso1"><?php echo $row['nomeCategoria']; ?></a></li>
+          <li><a class="dropdown-trigger hoverable" data-target="menususpenso2"><?php echo $row['nomeCategoria']; ?></a></li>
+          <li><a class="dropdown-trigger hoverable" data-target="menususpenso3">Masculino</a></li>
+          <li><a class="dropdown-trigger hoverable" data-target="menususpenso4">Infantil</a></li>    <!--Botões de Categorias-->
+          <li><a class="dropdown-trigger hoverable" data-target="menususpenso5">Acessórios</a></li>
         </ul>
-      
+          
   </div>
 </nav>
 
@@ -179,7 +196,7 @@
       <div class="row container">
         <ul class="collapsible">
           <li>
-            <div class="collapsible-header"><i class="material-icons">home</i>Tudo para o seu lar!</div>
+            <div class="collapsible-header hoverable"><i class="material-icons">home</i>Tudo para o seu lar!</div>
             <div class="collapsible-body" ><a href="#">Móveis</a></div>
             <div class="collapsible-body" ><a href="#">Decoração</a></div>
             <div class="collapsible-body" ><a href="#">Utensílios domésticos</a></div>
@@ -187,7 +204,7 @@
             <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
           </li>
           <li>
-            <div class="collapsible-header"><i class="material-icons">wc</i>Quer ficar por dentro da moda?</div>
+            <div class="collapsible-header hoverable"><i class="material-icons">wc</i>Quer ficar por dentro da moda?</div>
             <div class="collapsible-body" ><a href="#">Roupas femininas</a></div>
             <div class="collapsible-body" ><a href="#">Roupas masculinas</a></div>
             <div class="collapsible-body" ><a href="#">Acessórios</a></div>
@@ -195,7 +212,7 @@
             <div class="collapsible-body" ><a href="#">Moda infantil</a></div>
           </li>
           <li>
-            <div class="collapsible-header"><i class="material-icons">directions_bike</i>Qual o seu esporte favorito?</div>
+            <div class="collapsible-header hoverable"><i class="material-icons">directions_bike</i>Qual o seu esporte favorito?</div>
             <div class="collapsible-body" ><a href="#">Cama, mesa e banho</a></div>
           </li>
         </ul>
@@ -313,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <H1>Novidades</H1>
 
-  <div class="card">
+  <div class="card hoverable">
     <div class="card__image-holder">
       <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?car" alt="wave"></a>
     </div>
@@ -334,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 
-  <div class="card">
+  <div class="card hoverable">
     <div class="card__image-holder">
       <a href="#"><img class="card__image" src="https://source.unsplash.com/300x225/?ball" alt="wave"></a>
     </div>
@@ -481,7 +498,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 
-</div>
 </div>
 
     <footer class="page-footer">
