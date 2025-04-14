@@ -2,10 +2,10 @@
   <img src="https://github.com/user-attachments/assets/03345a80-e776-499c-a0cd-3fb56e832059" alt="logo encodify.com.br">
 </p>
 
-📌 Sobre o Projeto
+### 📌 Sobre o Projeto ### 
 O site_mappin é um projeto de e-commerce desenvolvido como Trabalho de Conclusão de Curso, com o objetivo de resgatar a essência da tradicional loja Mappin, adaptando-a para o ambiente digital moderno. A plataforma oferece uma experiência de compra intuitiva e nostálgica, combinando design clássico com funcionalidades contemporâneas.
 
-🚀 Funcionalidades
+### 🚀 Funcionalidades ### 
 Catálogo de Produtos: Navegação por categorias com imagens e descrições detalhadas.
 
 Sistema de Autenticação: Registro e login de usuários com segurança.
@@ -18,7 +18,8 @@ Processo de Checkout: Finalização de compras com cálculo de totais.
 
 Design Responsivo: Compatibilidade com dispositivos móveis e desktops.
 
-🛠️ Tecnologias Utilizadas
+### 🛠️ Tecnologias Utilizadas ### 
+
 Frontend:
 
 HTML5, CSS3
@@ -37,7 +38,7 @@ MySQL 5.7
 
 Outros:
 
-📸 Capturas de Tela
+### 📸 Capturas de Tela ### 
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/" alt="logo encodify.com.br">
@@ -60,8 +61,8 @@ site_mappin/
 └── README.md            # Documentação do projeto
 </pre>
 
-📄 Licença
+### 📄 Licença ###
 Este projeto está licenciado sob a MIT License.
 
-🙋‍♂️ Autor
+### 🙋‍♂️ Autor ###
 Emerson25k5 — GitHub
