@@ -6,39 +6,35 @@
 O site_mappin é um projeto de e-commerce desenvolvido como Trabalho de Conclusão de Curso, com o objetivo de resgatar a essência da tradicional loja Mappin, adaptando-a para o ambiente digital moderno. A plataforma oferece uma experiência de compra intuitiva e nostálgica, combinando design clássico com funcionalidades contemporâneas.
 
 ### 🚀 Funcionalidades ### 
-Catálogo de Produtos: Navegação por categorias com imagens e descrições detalhadas.
+- Catálogo de Produtos: Navegação por categorias com imagens e descrições detalhadas.
 
-Sistema de Autenticação: Registro e login de usuários com segurança.
+- Sistema de Autenticação: Registro e login de usuários com segurança.
 
-Carrinho de Compras: Adição, remoção e visualização de produtos selecionados.
+- Carrinho de Compras: Adição, remoção e visualização de produtos selecionados.
 
-Processo de Checkout: Finalização de compras com cálculo de totais.
+- Processo de Checkout: Finalização de compras com cálculo de totais.
 
-Área Administrativa: Gerenciamento de produtos, categorias e pedidos.
+- Área Administrativa: Gerenciamento de produtos, categorias e pedidos.
 
-Design Responsivo: Compatibilidade com dispositivos móveis e desktops.
+- Design Responsivo: Compatibilidade com dispositivos móveis e desktops.
 
 ### 🛠️ Tecnologias Utilizadas ### 
 
 Frontend:
 
-HTML5, CSS3
+- HTML5, CSS3
 
-Materialize CSS
+- Materialize CSS
 
-Bootstrap 5
+- Bootstrap 5
 
-JavaScript (com jQuery)
+- JavaScript (com jQuery)
 
 Backend:
 
-PHP 8.2
+- PHP 8.2
 
-MySQL 5.7
-
-Outros:
-
-### 📸 Capturas de Tela ### 
+- MySQL 5.7
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/" alt="logo encodify.com.br">
